@@ -87,6 +87,7 @@ function PannAppBar() {
           open={Boolean(anchorEl)}
           onClose={handleCloseMenu}
         >
+          <MenuItem onClick={() => navigate('/login')}>ออกจากระบบ</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
