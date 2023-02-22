@@ -16,8 +16,8 @@ function PannAppBar() {
   };
   
   return (
-    <AppBar position="static">
-      <Drawer
+    <AppBar position="static"  >
+      <Drawer 
         anchor='left'
         open={anchorNav}
         onClose={() => setAnchorNav(false)}
@@ -26,26 +26,26 @@ function PannAppBar() {
           <ChevronLeft />
         </IconButton>
         <Divider />
-        <List>
+        <List >
           <ListItem>
             <ListItemButton onClick={() => navigate('/main')}>
               <ListItemIcon>
                 <Home />
               </ListItemIcon>
-              <ListItemText primary="main" />
+              <ListItemText primary="การประชุมวันนี้" />
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton onClick={() => navigate('/announcement')}>
+            <ListItemButton onClick={() => navigate('/All')}>
               <ListItemIcon>
                 <Campaign />
               </ListItemIcon>
-              <ListItemText primary="Announcement" />
+              <ListItemText primary="การประชุมทั้งหมด" />
             </ListItemButton>
           </ListItem>
         </List>
       </Drawer>
-      <Toolbar>
+      <Toolbar >
         <IconButton
           size="large"
           edge="start"
@@ -57,7 +57,7 @@ function PannAppBar() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Menu
+          รายการ
         </Typography>
         <Typography>
         </Typography>
@@ -83,6 +83,7 @@ function PannAppBar() {
             vertical: 'top',
             horizontal: 'right',
           }}
+          
           open={Boolean(anchorEl)}
           onClose={handleCloseMenu}
         >

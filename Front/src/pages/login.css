@@ -1,6 +1,5 @@
-
   body {
-    background-color: #803220;
+    background-color: #ffffff;
   }
   .topbox {
     background-color: #f7f7f7;
@@ -21,6 +20,3 @@
     justify-content: center;
     flex-direction: column;
   }  
-  .image{
-    background-image: url(path);
-  }

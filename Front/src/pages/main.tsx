@@ -6,13 +6,14 @@ import { useAuth } from "react-oidc-context";
 import topic from "../model/topic";
 import PannAppBar from "../Component/pann-app-bar";
 import './main.css';
-function first(){
+function main(){
     console.log('main')
     return (
         <>
         <PannAppBar></PannAppBar>
-        
+        <div className="main1">การประชุมวันนี้</div>
+        <div className="main2"></div>
         </>
 )
     }
-export default first
+export default main

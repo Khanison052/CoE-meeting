@@ -1,5 +1,25 @@
 .background {
-    background-color: #970101;
+    background-color: #f7f6f6;
     padding: 20px;
     border: 1px solid #ccc;
   }
+.main1{
+  position:fixed;
+  width: 1300px;
+  height: 125px;
+  left: 300px;
+  top: 361px;
+  background: #8C0606;
+  color: #f7f6f6;
+  font-size: 75px ;
+  text-align: center;
+}
+.main2{
+  position: fixed;
+  width: 1300px;
+  height: 700px;
+  left: 300px;
+  top: 480px;
+
+  background: #D9D9D9;
+}
