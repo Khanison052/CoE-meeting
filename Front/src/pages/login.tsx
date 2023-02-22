@@ -3,9 +3,13 @@ import { Button } from '@mui/material';
 import { Box } from '@mui/system';
 import { Login as LoginIcon } from '@mui/icons-material';
 import { TextField } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import '../index.css';
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import './login.css';
+
+
 function Login() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,24 +28,25 @@ function Login() {
     }      
 
   return (
-    <><div >
-    <h1>test</h1>
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 100 }}>
-    <TextField id="box-input" label="Username" 
-    value={User} onChange={handleChangeuser} variant="outlined"/>
+    <>
+    <Box className="topbox" >
     </Box>
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 100 }}>
-    <TextField id="box-input" label="Password" 
-    value={Pass} onChange={handleChangepass} variant="outlined"/>
+
+    <Box className="box">
+    <Typography sx={{ fontSize: 30 ,color: 'white' }}>COE E MEETING</Typography>
     
-    </Box>
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 100 }}>
+    <TextField  id="box-input" label="Username" sx={{ backgroundColor: 'white' }}
+    value={User} onChange={handleChangeuser} variant="outlined"/>
+    
+    <TextField id="box-input" label="Password"  sx={{ backgroundColor: 'white' }}
+    value={Pass} onChange={handleChangepass} variant="outlined"/>
     <Button variant='contained' sx={{ fontSize: 'large' }} onClick={Gomain} >
         <LoginIcon sx={{ mr: 1 }} />
-        Log in
+        เข้าสู่ระบบ
       </Button>
     </Box>
-    </div></>
+
+    </>
     
   );
 };
