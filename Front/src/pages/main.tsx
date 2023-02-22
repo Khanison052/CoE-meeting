@@ -4,10 +4,11 @@ import { Box } from "@mui/system";
 import { Add, Close } from '@mui/icons-material/';
 import { useAuth } from "react-oidc-context";
 import topic from "../model/topic";
+import './main.css';
 function first(){
     console.log('main')
     return (
-        <><div >
+        <><div className="background">
         <h1>hello</h1>
         </div></>
 )
