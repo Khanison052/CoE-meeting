@@ -2,11 +2,13 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, Dia
 import { Box } from "@mui/system";
 import { Close, Delete, Edit, Upload } from "@mui/icons-material";
 import { read, utils } from 'xlsx';
-
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
 
 function TopicCard(){
+    const navigate = useNavigate();
+    const location = useLocation();
     const [tabIndex, setTabIndex] = useState(0);
     const [popup, setPopup] = useState(false);
     const [isImporting, setIsImporting] = useState(false);
@@ -16,13 +18,15 @@ function TopicCard(){
         'resultType',
         'remark'
       ];
-
+      function Showmeet(){
+        navigate('/All');
+      }
 
 
 
     return(<Box sx={{position:'fixed',left: 320 ,top: 400,width: 1000,height: 125}}>
         <Card sx={{ maxWidth: 1200, height: 240 }}>
-          <CardHeader
+          <CardHeader onClick={Showmeet}
             sx={{ height: '30%' }}
             title={'โครงการ'}
             action={
