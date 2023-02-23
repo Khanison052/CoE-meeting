@@ -5,6 +5,7 @@ import { Add, Close } from '@mui/icons-material/';
 import { useAuth } from "react-oidc-context";
 import topic from "../model/topic";
 import PannAppBar from "../Component/pann-app-bar";
+import TopicCard from "../Component/card"
 import './main.css';
 function main(){
     console.log('main')
@@ -13,6 +14,7 @@ function main(){
         <PannAppBar></PannAppBar>
         <div className="main1">การประชุมวันนี้</div>
         <div className="main2"></div>
+        <TopicCard></TopicCard>
         </>
 )
     }
