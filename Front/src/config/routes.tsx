@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from '../pages/login'
 import Mainwb from '../pages/main'
-import All from '../pages/all'
 const AppRoutes = () => {
     return (
     <Router>
@@ -9,7 +8,7 @@ const AppRoutes = () => {
         <Route index element={<Login />} />
         <Route path="login" element={<Login/>} />
         <Route path="main" element={<Mainwb/>} />
-        <Route path="All" element={<All/>} />
+
       </Routes>
     </Router>
     );
