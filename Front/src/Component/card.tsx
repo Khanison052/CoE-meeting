@@ -13,10 +13,10 @@ function TopicCard(){
     const [popup, setPopup] = useState(false);
     const [isImporting, setIsImporting] = useState(false);
     const xlsxHeading = [
-        'userCode',
-        'result',
-        'resultType',
-        'remark'
+        'ชื่อ',
+        'นามสกุล',
+        'รหัสประจำตัว',
+        'แผนก'
       ];
       function Showmeet(){
         navigate('/All');
@@ -40,7 +40,7 @@ function TopicCard(){
               <Grid container spacing={2} columns={5}>
                 <Grid item xs={3}>
                   <Typography component="div">
-                    {'hello'}
+                    {'รายชื่อสมาชิก'}
                   </Typography>
                 </Grid>
               </Grid>
@@ -54,22 +54,15 @@ function TopicCard(){
         <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" } }} open={popup} onClose={() => setPopup(false)}>
           <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Tabs value={tabIndex} onChange={(event: React.SyntheticEvent, newValue: number) => setTabIndex(newValue)} aria-label="basic tabs example">
-              <Tab label="General" />
-              <Tab label="Results List" />
+              <Tab label="สมาชิก" />
+              <Tab label="สมาชิก" />
             </Tabs>
             <IconButton onClick={() => setPopup(false)}>
               <Close />
             </IconButton>
           </DialogTitle>
           <Box hidden={tabIndex !== 0}>
-          </Box>
-          <Box hidden={tabIndex !== 1}>
-            <Button variant="contained" component="label" sx={{ mx: 2 }}>
-              <Upload />
-              Import
-              <input hidden type="file" accept=".pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  />
-            </Button>
-            <Table>
+          <Table>
               <TableHead>
                 <TableRow>
                   {xlsxHeading.map((it, index) => <TableCell key={index}><b>{it}</b></TableCell>)}
@@ -77,16 +70,13 @@ function TopicCard(){
               </TableHead>
               <TableBody>
                   <TableRow  sx={{ backgroundColor: '#f78279'  }}>
-                    <TableCell>{'hello1'}</TableCell>
-                    <TableCell>{'hello2'}</TableCell>
-                    <TableCell>{'hello3'}</TableCell>
-                    <TableCell>{'hello4'}</TableCell>
+                    <TableCell>{'นายภาคิน'}</TableCell>
+                    <TableCell>{'จิตสกุลชัยเดช'}</TableCell>
+                    <TableCell>{'6510110347'}</TableCell>
+                    <TableCell>{'ชั้นปีการศึกษาที่ 1'}</TableCell>
                   </TableRow>
               </TableBody>
             </Table>
-            <Button disabled={!isImporting} variant="contained" component="label" sx={{ m: 2, float: 'right' }} >
-              Submit
-            </Button>
           </Box>
         </Dialog>
       </Box>

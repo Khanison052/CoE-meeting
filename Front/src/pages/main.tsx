@@ -12,6 +12,8 @@ function main(){
     return (
         <>
         <Form></Form>
+        <Box></Box>
+        <Box><TopicCard></TopicCard></Box>
         </>
 )
     }
