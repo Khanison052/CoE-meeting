@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
 
-function TopicCard(){
+function Storycard(){
     const navigate = useNavigate();
     const location = useLocation();
     const [tabIndex, setTabIndex] = useState(0);
@@ -18,11 +18,11 @@ function TopicCard(){
         'รหัสประจำตัว',
         'แผนก'
       ];
-      function story(){navigate('/story')}  
+      
 
 
 
-    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}} onClick={story}>
+    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}}>
         <Card sx={{ maxWidth: 1200, height: 200 }}>
           <CardHeader 
             sx={{ height: '30%' }}
@@ -73,4 +73,4 @@ function TopicCard(){
     )
   
 }
-export default TopicCard
+export default Storycard
