@@ -18,43 +18,33 @@ function TopicCard(){
         'รหัสประจำตัว',
         'แผนก'
       ];
-      function Showmeet(){
-        navigate('/All');
-      }
+      
 
 
 
-    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '15%'}}>
-        <Card sx={{ maxWidth: 1200, height: 240 }}>
-          <CardHeader onClick={Showmeet}
+    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}}>
+        <Card sx={{ maxWidth: 1200, height: 200 }}>
+          <CardHeader 
             sx={{ height: '30%' }}
             title={'โครงการ'}
-            action={
-              <IconButton sx={{ '&:hover': { color: 'red' } }} >
-                <Delete />
-              </IconButton>
-            }
           />
-          <CardActionArea sx={{ height: '56%' }} onClick={() => setPopup(true)}>
-            <CardContent sx={{ height: '40%' }}>
+          <CardActionArea sx={{ width: "50%",height: '20%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
+            <CardContent sx={{ height: '10%' }}>
               <Grid container spacing={2} columns={5}>
                 <Grid item xs={3}>
-                  <Typography component="div">
+                  <Typography component="div" sx={{fontSize: '110%' ,color: 'white',textAlign:'center'}}>
                     {'รายชื่อสมาชิก'}
                   </Typography>
                 </Grid>
               </Grid>
             </CardContent>
-            <CardActions sx={{ justifyContent: 'flex-end' }}>
-              <Edit color="primary" />
-            </CardActions>
+            
+            
           </CardActionArea>
         </Card>
-  
         <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" } }} open={popup} onClose={() => setPopup(false)}>
           <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Tabs value={tabIndex} onChange={(event: React.SyntheticEvent, newValue: number) => setTabIndex(newValue)} aria-label="basic tabs example">
-              <Tab label="สมาชิก" />
               <Tab label="สมาชิก" />
             </Tabs>
             <IconButton onClick={() => setPopup(false)}>
@@ -69,7 +59,7 @@ function TopicCard(){
                 </TableRow>
               </TableHead>
               <TableBody>
-                  <TableRow  sx={{ backgroundColor: '#f78279'  }}>
+                  <TableRow  sx={{ backgroundColor: 'white'  }}>
                     <TableCell>{'นายภาคิน'}</TableCell>
                     <TableCell>{'จิตสกุลชัยเดช'}</TableCell>
                     <TableCell>{'6510110347'}</TableCell>
