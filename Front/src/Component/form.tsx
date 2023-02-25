@@ -26,9 +26,9 @@ function Form(){
             menu
             </Box>
             <Box sx={{position: 'absolute',background:'#ffffff',width: 500,height: 700,left: 0,top: 450,border: 2}}>
-            <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={Today} >text</Typography>
-            <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={Past} >text</Typography>
-            <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={All} >text</Typography></Box>
+            <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={Today} >การประชุมวันนี้</Typography>
+            <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={All} >การประชุมทั้งหมด</Typography>
+            <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={Past} >การประชุมที่ผ่านมาแล้ว</Typography></Box>
         <Box sx={{position: 'absolute',backgroundColor: '#D9D9D9',height: 150,width:1000,top:300,left:500,display: 'flex',flexDirection: 'column',fontSize:100}}>แสดง</Box>
         </>
     )

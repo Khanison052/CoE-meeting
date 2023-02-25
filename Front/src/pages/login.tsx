@@ -33,7 +33,7 @@ function Login() {
     </Box>
 
     <Box className="box">
-    <Typography sx={{ fontSize: 30 ,color: 'white' }} >COE E MEETING</Typography>
+    <Typography sx={{ fontSize: 60 ,color: 'white' }} >CoE E-Meeting</Typography>
     
     <TextField  id="box-input" label="Username" sx={{ backgroundColor: 'white' }}
     value={User} onChange={handleChangeuser} variant="outlined"/>
