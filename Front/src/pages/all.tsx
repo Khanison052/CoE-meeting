@@ -7,14 +7,14 @@ import topic from "../model/topic";
 import Form from "../Component/form";
 import TopicCard from "../Component/card"
 import './main.css';
-function main(){
+function all(){
     console.log('main')
     return (
         <>
         <Form></Form>
-        <Box className={'title'} >ยินดีต้อนรับ</Box>
-        
+        <Box className={'title'} >การประชุมทั้งหมด</Box>
+        <Box><TopicCard></TopicCard></Box>
         </>
 )
     }
-export default main
+export default all

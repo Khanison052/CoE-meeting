@@ -24,7 +24,7 @@ function TopicCard(){
 
 
 
-    return(<Box sx={{position:'fixed',left: 320 ,top: 400,width: 1000,height: 125}}>
+    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '15%'}}>
         <Card sx={{ maxWidth: 1200, height: 240 }}>
           <CardHeader onClick={Showmeet}
             sx={{ height: '30%' }}
