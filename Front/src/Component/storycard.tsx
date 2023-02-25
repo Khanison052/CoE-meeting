@@ -4,8 +4,6 @@ import { Close, Delete, Edit, Upload } from "@mui/icons-material";
 import { read, utils } from 'xlsx';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
-
-
 function Storycard(){
     const navigate = useNavigate();
     const location = useLocation();
@@ -22,54 +20,25 @@ function Storycard(){
 
 
 
-    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}}>
-        <Card sx={{ maxWidth: 1200, height: 200 }}>
-          <CardHeader 
-            sx={{ height: '30%' }}
-            title={'โครงการ'}
-          />
-          <CardActionArea sx={{ width: "50%",height: '20%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
-            <CardContent sx={{ height: '10%' }}>
-              <Grid container spacing={2} columns={5}>
-                <Grid item xs={3}>
-                  <Typography component="div" sx={{fontSize: '110%' ,color: 'white',textAlign:'center'}}>
-                    {'รายชื่อสมาชิก'}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </CardContent>
-            
-            
-          </CardActionArea>
-        </Card>
-        <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" } }} open={popup} onClose={() => setPopup(false)}>
-          <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Tabs value={tabIndex} onChange={(event: React.SyntheticEvent, newValue: number) => setTabIndex(newValue)} aria-label="basic tabs example">
-              <Tab label="สมาชิก" />
-            </Tabs>
-            <IconButton onClick={() => setPopup(false)}>
-              <Close />
-            </IconButton>
-          </DialogTitle>
-          <Box hidden={tabIndex !== 0}>
-          <Table>
-              <TableHead>
-                <TableRow>
-                  {xlsxHeading.map((it, index) => <TableCell key={index}><b>{it}</b></TableCell>)}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                  <TableRow  sx={{ backgroundColor: 'white'  }}>
-                    <TableCell>{'นายภาคิน'}</TableCell>
-                    <TableCell>{'จิตสกุลชัยเดช'}</TableCell>
-                    <TableCell>{'6510110347'}</TableCell>
-                    <TableCell>{'ชั้นปีการศึกษาที่ 1'}</TableCell>
-                  </TableRow>
-              </TableBody>
-            </Table>
-          </Box>
-        </Dialog>
-      </Box>
+    return(<><Box sx={{ position: 'absolute', left: '55%', top: '60%', width: '30%', height: '20%', background: '#ffffff' }}>
+      <Typography sx={{fontSize: 30}}>ชื่อโครงการ</Typography>
+    </Box>
+    <Box sx={{ position: 'absolute', left: '55%', top: '65%', width: '30%', height: '50%', background: '#D9D9D9', flexdirection: 'column' }}>
+        <Typography>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
+        <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+        <Typography>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
+        <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+        <Typography>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
+        <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+        <Typography>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
+        <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+        <Typography>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
+        <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+        <Typography>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
+        <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+        <Typography>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
+        <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+    </Box></>
     )
   
 }
