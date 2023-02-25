@@ -23,52 +23,13 @@ function Storycard(){
 
 
     return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}}>
-        <Card sx={{ maxWidth: 1200, height: 200 }}>
-          <CardHeader 
-            sx={{ height: '30%' }}
-            title={'โครงการ'}
-          />
-          <CardActionArea sx={{ width: "50%",height: '20%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
-            <CardContent sx={{ height: '10%' }}>
-              <Grid container spacing={2} columns={5}>
-                <Grid item xs={3}>
-                  <Typography component="div" sx={{fontSize: '110%' ,color: 'white',textAlign:'center'}}>
-                    {'รายชื่อสมาชิก'}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </CardContent>
-            
-            
-          </CardActionArea>
-        </Card>
-        <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" } }} open={popup} onClose={() => setPopup(false)}>
-          <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Tabs value={tabIndex} onChange={(event: React.SyntheticEvent, newValue: number) => setTabIndex(newValue)} aria-label="basic tabs example">
-              <Tab label="สมาชิก" />
-            </Tabs>
-            <IconButton onClick={() => setPopup(false)}>
-              <Close />
-            </IconButton>
-          </DialogTitle>
-          <Box hidden={tabIndex !== 0}>
-          <Table>
-              <TableHead>
-                <TableRow>
-                  {xlsxHeading.map((it, index) => <TableCell key={index}><b>{it}</b></TableCell>)}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                  <TableRow  sx={{ backgroundColor: 'white'  }}>
-                    <TableCell>{'นายภาคิน'}</TableCell>
-                    <TableCell>{'จิตสกุลชัยเดช'}</TableCell>
-                    <TableCell>{'6510110347'}</TableCell>
-                    <TableCell>{'ชั้นปีการศึกษาที่ 1'}</TableCell>
-                  </TableRow>
-              </TableBody>
-            </Table>
-          </Box>
-        </Dialog>
+        <Typography>ชื่อโครงการ</Typography>
+        <Box sx={{flexdirection:'column'}}>
+          ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ
+        </Box>
+
+
+        
       </Box>
     )
   
