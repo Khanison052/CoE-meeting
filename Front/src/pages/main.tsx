@@ -12,7 +12,7 @@ function main(){
     return (
         <>
         <Form></Form>
-        <Box className={'title'} >ยินดีต้อนรับ</Box>
+        <Box className={'title'} >ยินดีต้อนรับเข้าสู่ CoE E-meeting</Box>
         
         </>
 )
