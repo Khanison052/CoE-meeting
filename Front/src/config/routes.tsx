@@ -5,6 +5,7 @@ import Todaywb from '../pages/today'
 import Pastwb from '../pages/past'
 import Allwb from '../pages/all'
 import Storywb from '../pages/story'
+import Test from '../pages/test'
 const AppRoutes = () => {
     return (
     <Router>
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="past" element={<Pastwb/>} />
         <Route path="all" element={<Allwb/>} />
         <Route path="story" element={<Storywb/>} />
+        <Route path="test" element={<Test/>} />
       </Routes>
     </Router>
     );

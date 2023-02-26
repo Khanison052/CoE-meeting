@@ -13,7 +13,7 @@ export class UserResultRepository {
   
     async getAll(filter: UserResultFilter): Promise<UserResult[] | null> {
       const params = {...filter}
-      const resp = await ax.get<UserResult[]>(`${this.urlPrefix}/userResult`, {params} )
+      const resp = await ax.get<UserResult[]>(`${this.urlPrefix}`, {params} )
       return resp.data
     }
   
