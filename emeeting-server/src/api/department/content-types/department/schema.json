@@ -12,8 +12,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "document": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
     "User": {
       "type": "relation",
