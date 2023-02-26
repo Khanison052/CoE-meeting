@@ -1,7 +1,9 @@
 export default interface topic{
     id: number
     topic: string
-    description?:string
+    loaction:string
+    date: Date
+    time: Date
     file1?:File
     file2?:File
     file3?:File

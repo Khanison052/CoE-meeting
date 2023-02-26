@@ -22,11 +22,12 @@ function TopicCard(){
 
 
 
-    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}} onClick={story}>
+    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}} >
         <Card sx={{ maxWidth: 1200, height: 200 }}>
           <CardHeader 
             sx={{ height: '30%' }}
             title={'โครงการ'}
+            onClick={story}
           />
           <CardActionArea sx={{ width: "50%",height: '20%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
             <CardContent sx={{ height: '10%' }}>
