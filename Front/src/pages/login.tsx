@@ -8,7 +8,8 @@ import '../index.css';
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './login.css';
-
+import Repo from '../Repo'
+import User from '../model/User';
 
 function Login() {
     const navigate = useNavigate();
@@ -21,12 +22,10 @@ function Login() {
     const handleChangepass = (event: React.ChangeEvent<HTMLInputElement>) => {
             setPass(event.target.value);
           };
-    function Gomain(){
+    function Loginto(){
         console.log('hello')
-        navigate('/main')
-        
+        navigate('/main')   
     }      
-
   return (
     <>
     <Box className="topbox" >
@@ -40,7 +39,7 @@ function Login() {
     
     <TextField id="box-input" label="Password"  sx={{ backgroundColor: 'white' }}
     value={Pass} onChange={handleChangepass} variant="outlined"/>
-    <Button variant='contained' sx={{ fontSize: 'large' }} onClick={Gomain} >
+    <Button variant='contained' sx={{ fontSize: 'large' }} onClick={Loginto} >
         <LoginIcon sx={{ mr: 1 }} />
         เข้าสู่ระบบ
       </Button>
