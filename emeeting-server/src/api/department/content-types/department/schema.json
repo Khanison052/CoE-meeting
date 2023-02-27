@@ -21,6 +21,12 @@
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "department"
+    },
+    "meetings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meeting.meeting",
+      "mappedBy": "departments"
     }
   }
 }
