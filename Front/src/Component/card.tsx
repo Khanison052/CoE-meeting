@@ -22,7 +22,7 @@ function TopicCard(){
 
 
 
-    return(<Box sx={{position:'fixed',left: '55%' ,top: '65%',width: '30%',height: '10%'}} >
+    return(<Box sx={{position:'fixed',left: '40%' ,top: '55%',width: '30%',height: '10%'}} >
         <Card sx={{ maxWidth: 1200, height: 200 }}>
           <CardHeader 
             sx={{ height: '30%' }}
