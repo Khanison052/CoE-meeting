@@ -4,17 +4,12 @@
     background-color: #ffffff;
   }
   .topbox {
-    background-image: url(../images/logopsu.png);
-    background-color: #f7f7f7;
-    height: 100px;
-    padding: 5px;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 50%;
+    max-width: 625px;
+    margin-right: 150px;
   }
   .box {
-    background-color: #803220;
+    background-color: #721001;
     height: 580px;
     padding: 10px;
     margin: 15px;

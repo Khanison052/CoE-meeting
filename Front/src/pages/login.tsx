@@ -28,11 +28,12 @@ function Login() {
     }      
   return (
     <>
-    <Box className="topbox" >
-    </Box>
+    <div className="topbox">
+      <img src={require("../images/logopsu.png")}/>
+    </div>
 
     <Box className="box">
-    <Typography sx={{ fontSize: 60 ,color: 'white' }} >CoE E-Meeting</Typography>
+    <Typography sx={{ fontSize: 60 ,color: 'white' }} >CoE E-meeting</Typography>
     
     <TextField  id="box-input" label="Username" sx={{ backgroundColor: 'white' }}
     value={User} onChange={handleChangeuser} variant="outlined"/>
