@@ -19,21 +19,21 @@ function Form(){
             <Typography sx={{ fontSize: 52 ,color: 'white' }}>เอกสารการประชุม
 คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
         </Box>
-        <Box sx={{ background:'#A6A6A6',position:'absolute',width: '50%',height: 79,left: '30%',top: '15%'}}>
+        <Box sx={{ background:'#A6A6A6',position:'absolute',width: '50%',height: '10%',left: '30%',top: '15%'}}>
             <Typography sx={{ fontSize: 30 ,color: 'white',textAlign:'right' }} onClick={Main} >หน้าหลัก</Typography>
         </Box>
-        <Box sx={{ background:'#A6A6A6',position:'absolute',width: '20%',height: 79,left: '80%',top: '15%'}}>
+        <Box sx={{ background:'#A6A6A6',position:'absolute',width: '20%',height: '10%',left: '80%',top: '15%'}}>
             <Typography sx={{ fontSize: 30 ,color: 'white',textAlign:'center' }} onClick={Logout} >ออกจากระบบ</Typography>
         </Box>
-        <Box sx={{position: 'absolute',fontsize: 50, width: '30%',height: 79,left: 0,top: '15%', background: '#D9D9D9'}}>ผู้ใช้:</Box>
-        <Box sx={{position: 'absolute',backgroundColor: '#A6A6A6',width: 500,height: 80,left:0,top:300,display: 'flex',flexDirection: 'column',fontSize:40}}>
+        <Box sx={{position: 'absolute',fontsize: 50, width: '30%',height: '10%',left: 0,top: '15%', background: '#D9D9D9' ,fontSize: 30}}>ผู้ใช้:</Box>
+        <Box sx={{position: 'absolute',backgroundColor: '#A6A6A6',width: '30%',height: '10%',left:0,top:'25%',display: 'flex',flexDirection: 'column',fontSize:40}}>
             รายการ
             </Box>
-            <Box sx={{position: 'absolute',background:'#ffffff',width: 497,height: 800,left: 0,top: 380,border: 2}}>
+            <Box sx={{position: 'absolute',background:'#ffffff',width: '30%',height: '65%',left: 0,top: '35%',border: 2}}>
             <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={Today} >การประชุมวันนี้</Typography>
             <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={All} >การประชุมทั้งหมด</Typography>
             <Typography sx={{ fontSize: 30 ,color: 'black' }} onClick={Past} >การประชุมที่ผ่านมาแล้ว</Typography></Box>
-        <Box sx={{position: 'absolute',backgroundColor: '#D9D9D9',height: 80,width:1000,top:300,left:500,display: 'flex',flexDirection: 'column',fontSize:40}}>แสดงรายละเอียดการประชุม</Box>
+        <Box sx={{position: 'absolute',backgroundColor: '#D9D9D9',height:'10%',width:'70%',top:'25%',left:'30%',display: 'flex',flexDirection: 'column',fontSize:40}}>แสดงรายละเอียดการประชุม</Box>
         </>
     )
 }
