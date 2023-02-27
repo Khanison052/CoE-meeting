@@ -1,18 +1,39 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'axios'
+import { AuthProviderProps } from 'react-oidc-context'
+import { User } from 'oidc-client-ts'
 
+const isDev = process.env.NODE_ENV || process.env.NODE_ENV === 'development'
 
-export const ax = axios.create({
-  baseURL: 'http://localhost:1337/api',
-  withCredentials: true,
-})
-async function authenticateUser(username: string, password: string)
- {
-  const response = await ax.get(`/meetings/?populate=*`, {
-    });
-    console.log(response.data)
-    console.log(response.data.data[0])
-    return response.data; // Returns the authentication token
+export const oidcConfig: AuthProviderProps = {
+    authority: 'http://localhost:8888/realms/master',
+    client_id: 'pann',
+    client_secret: 'opo8llBGO9nyI4IkbVMsKAUXcHNsT7iC',
+    scope: 'openid profile offline_access',
+    redirect_uri: 'http://localhost:3000',
+    monitorSession: true
 }
 
-export default authenticateUser
+export const ax = axios.create({
+    baseURL: 'http://localhost:8000'
+})
+
+ax.interceptors.request.use(
+    config => {
+        const oidcStorage = sessionStorage.getItem(`oidc.user:${oidcConfig.authority}:${oidcConfig.client_id}`)
+        if(config.headers && oidcStorage){
+            const user = User.fromStorageString(oidcStorage)
+            config.headers['Authorization'] = `Bearer ${user.access_token}`;
+        }
+        return config
+    },
+    error => {
+        return Promise.reject(error)
+    }
+)
+
+const config = {
+    isDev,
+    remoteRepositoryUrlPrefix: isDev ? 'http://localhost:8000/api' : '/api'
+}
+
+export default config
