@@ -20,10 +20,10 @@ function Storycard(){
 
 
 
-    return(<><Box sx={{ position: 'absolute', left: '55%', top: '60%', width: '30%', height: '20%', background: '#ffffff' }}>
+    return(<><Box sx={{ position: 'absolute', left: '35%', top: '40%', width: '30%', height: '20%', background: '#ffffff' }}>
       <Typography sx={{fontSize: 30}}>ชื่อโครงการ</Typography>
     </Box>
-    <Box sx={{ position: 'absolute', left: '55%', top: '65%', width: '30%', height: '50%', background: '#D9D9D9', flexdirection: 'column' }}>
+    <Box sx={{ position: 'absolute', left: '35%', top: '45%', width: '30%', height: '50%', background: '#D9D9D9', flexdirection: 'column',fontSize:25 }}>
         <Typography>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
         <Typography>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
