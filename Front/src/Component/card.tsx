@@ -22,18 +22,19 @@ function TopicCard(){
 
 
 
-    return(<Box sx={{position:'fixed',left: '40%' ,top: '55%',width: '30%',height: '10%'}} >
-        <Card sx={{ maxWidth: 1200, height: 200 }}>
+    return(<Box sx={{position:'fixed',left: '30%' ,top: '45%',width: '30%',height: '10%'}} >
+        <Card sx={{ maxWidth: 1200, height: 200 ,margin:10}}>
           <CardHeader 
             sx={{ height: '30%' }}
-            title={'โครงการ'}
+            title={'การประชุมเรื่องxxxxxครั้งที่xxx'}
+            subheader={'วันที่xxเดือนxxปีxx เวลาxxxxx สถานที่xxxxx'}
             onClick={story}
           />
-          <CardActionArea sx={{ width: "50%",height: '20%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
+          <CardActionArea sx={{ width: "30%",height: '20%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
             <CardContent sx={{ height: '10%' }}>
               <Grid container spacing={2} columns={5}>
-                <Grid item xs={3}>
-                  <Typography component="div" sx={{fontSize: '110%' ,color: 'white',textAlign:'center'}}>
+                <Grid item xs={5}>
+                  <Typography component="div" sx={{fontSize: '1vw' ,color: 'white',textAlign:'center'}}>
                     {'รายชื่อสมาชิก'}
                   </Typography>
                 </Grid>
