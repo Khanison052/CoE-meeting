@@ -1,4 +1,4 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, Dialog, DialogTitle, Grid, IconButton, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Close, Delete, Edit, Upload } from "@mui/icons-material";
 import { read, utils } from 'xlsx';
@@ -21,22 +21,22 @@ function Storycard(){
 
 
     return(<><Box sx={{ position: 'absolute', left: '35%', top: '40%', width: '30%', height: '20%', background: '#ffffff' }}>
-      <Typography sx={{fontSize: 30}}>ชื่อโครงการ</Typography>
+      <Typography sx={{fontSize: 40}}>ชื่อโครงการ</Typography>
     </Box>
-    <Box sx={{ position: 'absolute', left: '35%', top: '45%', width: '30%', height: '50%', background: '#D9D9D9', flexdirection: 'column',fontSize:25 }}>
-        <Typography>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
+    <Box sx={{ position: 'absolute', left: '35%', top: '45%', width: '50%', height: '55%', background: '#D9D9D9', flexdirection: 'column' }}>
+        <Typography sx={{fontSize:'2rem'}}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
-        <Typography>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
+        <Typography sx={{fontSize:'2rem'}}>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
-        <Typography>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
+        <Typography sx={{fontSize:'2rem'}}>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
-        <Typography>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
+        <Typography sx={{fontSize:'2rem'}}>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
-        <Typography>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
+        <Typography sx={{fontSize:'2rem'}}>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
-        <Typography>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
+        <Typography sx={{fontSize:'2rem'}}>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
-        <Typography>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
+        <Typography sx={{fontSize:'2rem'}}>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
         <a href="/mockpdf/System.pdf" target="_blank" rel="noopener noreferrer">Click to view PDF</a>
     </Box></>
     )

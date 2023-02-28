@@ -22,16 +22,17 @@ function TopicCard(){
 
 
 
-    return(<Box sx={{position:'fixed',left: '30%' ,top: '45%',width: '30%',height: '10%'}} >
-        <Card sx={{ maxWidth: 1200, height: 200 ,margin:10}}>
+    return(<Box sx={{position:'absolute',left: '30%' ,top: '45%',width: '70%',height: '30%' }} >
+        <Card sx={{ maxWidth: 1200, height: 300 ,margin:10}}>
           <CardHeader 
-            sx={{ height: '30%' }}
+            sx={{ height: '50%', fontSize: '2rem', style: {} }}
             title={'การประชุมเรื่องxxxxxครั้งที่xxx'}
             subheader={'วันที่xxเดือนxxปีxx เวลาxxxxx สถานที่xxxxx'}
+            
             onClick={story}
           />
-          <CardActionArea sx={{ width: "30%",height: '20%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
-            <CardContent sx={{ height: '10%' }}>
+          <CardActionArea sx={{ width: "30%",height: '30%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
+            <CardContent sx={{ height: '30%' }}>
               <Grid container spacing={2} columns={5}>
                 <Grid item xs={5}>
                   <Typography component="div" sx={{fontSize: '1vw' ,color: 'white',textAlign:'center'}}>
@@ -44,28 +45,28 @@ function TopicCard(){
             
           </CardActionArea>
         </Card>
-        <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" } }} open={popup} onClose={() => setPopup(false)}>
-          <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" ,fontSize: '1vw'} }} open={popup} onClose={() => setPopup(false)}>
+          <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between'}}>
             <Tabs value={tabIndex} onChange={(event: React.SyntheticEvent, newValue: number) => setTabIndex(newValue)} aria-label="basic tabs example">
-              <Tab label="สมาชิก" />
+              <Tab sx={{ fontSize: '1vw' }}  label="สมาชิก" />
             </Tabs>
             <IconButton onClick={() => setPopup(false)}>
               <Close />
             </IconButton>
           </DialogTitle>
           <Box hidden={tabIndex !== 0}>
-          <Table>
+          <Table >
               <TableHead>
-                <TableRow>
-                  {xlsxHeading.map((it, index) => <TableCell key={index}><b>{it}</b></TableCell>)}
+                <TableRow >
+                  {xlsxHeading.map((it, index) => <TableCell sx={{ fontSize: '1vw' }} key={index}><b>{it}</b></TableCell>)}
                 </TableRow>
               </TableHead>
               <TableBody>
-                  <TableRow  sx={{ backgroundColor: 'white'  }}>
-                    <TableCell>{'นายภาคิน'}</TableCell>
-                    <TableCell>{'จิตสกุลชัยเดช'}</TableCell>
-                    <TableCell>{'6510110347'}</TableCell>
-                    <TableCell>{'ชั้นปีการศึกษาที่ 1'}</TableCell>
+                  <TableRow  sx={{ backgroundColor: 'white' }}>
+                    <TableCell sx={{ fontSize: '1vw' }}>{'นายภาคิน'}</TableCell>
+                    <TableCell sx={{ fontSize: '1vw' }}>{'จิตสกุลชัยเดช'}</TableCell>
+                    <TableCell sx={{ fontSize: '1vw' }}>{'6510110347'}</TableCell>
+                    <TableCell sx={{ fontSize: '1vw' }}>{'ชั้นปีการศึกษาที่ 1'}</TableCell>
                   </TableRow>
               </TableBody>
             </Table>
