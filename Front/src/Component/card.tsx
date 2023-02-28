@@ -31,7 +31,7 @@ function TopicCard(){
             
             onClick={story}
           />
-          <CardActionArea sx={{ width: "30%",height: '30%' ,left: '70%',background: '#721001' }} onClick={() => setPopup(true)}>
+          <CardActionArea sx={{ width: "20%",height: '18%' ,left: '75%',background: '#721001' }} onClick={() => setPopup(true)}>
             <CardContent sx={{ height: '30%' }}>
               <Grid container spacing={2} columns={5}>
                 <Grid item xs={5}>
@@ -41,9 +41,8 @@ function TopicCard(){
                 </Grid>
               </Grid>
             </CardContent>
-            
-            
           </CardActionArea>
+
         </Card>
         <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" ,fontSize: '1vw'} }} open={popup} onClose={() => setPopup(false)}>
           <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between'}}>
