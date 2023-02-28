@@ -11,6 +11,7 @@ import './login.css';
 import Repo from '../Repo'
 import User from '../model/User';
 import { ClassNames } from '@emotion/react';
+import axios from 'axios';
 
 function Login() {
     const navigate = useNavigate();
@@ -24,9 +25,8 @@ function Login() {
       if (result) {
           if (userResultList.length) {
               setUserResultList([])
-              console.log(userResultList.data[0])
           }
-          
+          setUserResultList(result)
       } 
   }
     
@@ -39,7 +39,7 @@ function Login() {
             setPass(event.target.value);
           };
     function Loginto(){
-        console.log(userResultList)   
+        console.log(userResultList[0].attributes.Topic)   
     }      
     useEffect(() => {
 

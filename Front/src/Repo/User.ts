@@ -12,8 +12,8 @@ export class UserResultRepository implements IRepository<UserResult> {
 
   async getAll(filter: UserResultFilter): Promise<UserResult[] | null> {
     const params = {...filter}
-    const resp = await ax.get<UserResult[]>(`${this.urlPrefix}/meetings`, {params} )
-    return resp.data
+    const resp = await ax.get(`${this.urlPrefix}/meetings`, {params} )
+    return resp.data.data
   }
 
   async get(id: string|number): Promise<UserResult | null> {

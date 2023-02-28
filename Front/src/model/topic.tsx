@@ -1,6 +1,6 @@
 export default interface topic{
     id: number
-    topic: string
+    Topic: string
     loaction:string
     date: Date
     time: Date
