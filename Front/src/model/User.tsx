@@ -1,5 +1,3 @@
-
-
 export default interface userResults{
   id: number
   Topic : string

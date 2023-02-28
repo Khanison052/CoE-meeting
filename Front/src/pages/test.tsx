@@ -24,9 +24,9 @@ function Login() {
       if (result) {
           if (userResultList.length) {
               setUserResultList([])
-              console.log(userResultList)
+              console.log(userResultList.data[0])
           }
-          setUserResultList(result)
+          
       } 
   }
     

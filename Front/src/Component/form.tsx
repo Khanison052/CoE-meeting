@@ -4,7 +4,7 @@ import { useAppCtx } from "../AppProvider";
 import { Box } from "@mui/system";
 import Typography from '@mui/material/Typography';
 import { useNavigate, useLocation } from 'react-router-dom';
-
+import '../pages/login.css';
 function Form(){
     const navigate = useNavigate();
     const location = useLocation();
@@ -16,9 +16,11 @@ function Form(){
 
     return (
         <>
-         <Box sx={{ position: 'absolute',width: '100%',height: '15%',background: '#721001'}}>
-            <Typography sx={{ fontSize: 45 ,color: 'white' }}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
+         <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'grid', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px'}}>
+                <img src={require("../images/logopsu.png")} className='imagesform' />
+                <Typography sx={{ width: '80%',fontSize: 45, color: 'white' }}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
         </Box>
+
 
         <Box sx={{ background:'#A6A6A6',position:'absolute',width: '50%',height: '8%',left: '30%',top: '15%',border: 1, display:'flex'}}>
             <Typography sx={{ fontSize: 35 ,color: 'white',textAlign:'center', marginLeft:'75%'}} onClick={Main} >หน้าหลัก </Typography>

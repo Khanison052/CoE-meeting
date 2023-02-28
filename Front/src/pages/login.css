@@ -18,6 +18,12 @@
     width: 30%;
     margin-left: 1%;
   }
+  .imagesform {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+  }
   
   .boxs {
     background-color: #721001;
@@ -28,12 +34,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-  .image {
-    height: 170px;
-    width: 50%;
-    max-width: 625px;
-    justify-content: center;
   }
   .imagecoe {
     width: 10%;

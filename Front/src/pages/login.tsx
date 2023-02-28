@@ -29,12 +29,8 @@ function Login() {
     }      
   return (
     <div className='body'>
-      <div>
         <img src={require("../images/logopsu.png")}className='images'/>
-      </div>
-      <div>
         <img src={require("../images/logo coe.jpg")}className="imagecoe"/>
-      </div>
     <Box className="box">
     <Typography sx={{ fontSize: 60 ,color: 'white' }} >CoE E-meeting</Typography>
     <div className="image">
