@@ -33,7 +33,7 @@ function Login() {
         <img src={require("../images/logo coe.jpg")}className="imagecoe"/>
     <Box className="box">
     <Typography sx={{ fontSize: 60 ,color: 'white' }} >CoE E-meeting</Typography>
-    <div className="image">
+    <div className="imagesform">
       <img src={require("../images/logopsupass.png")}/>
     </div>
     
