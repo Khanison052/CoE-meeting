@@ -9,7 +9,14 @@ export interface UserResultFilter {
 
 export class UserResultRepository implements IRepository<UserResult> {
   urlPrefix = 'http://localhost:1337/api'
-
+  
+  async post(username: string, password: string){
+    const response = await ax.post(`${this.urlPrefix}/auth/local`, {
+      "identifier": username,
+      "password": password
+      });
+    return response.data.jwt
+  }
   async getAll(filter: UserResultFilter): Promise<UserResult[] | null> {
     const params = {...filter}
     const resp = await ax.get(`${this.urlPrefix}/meetings`, {params} )

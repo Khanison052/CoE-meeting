@@ -39,10 +39,10 @@ function Login() {
             setPass(event.target.value);
           };
     function Loginto(){
-        console.log(userResultList[0].attributes.Topic)   
+      const result = Repo.UserResults.post(User,Pass)
+      console.log(result)
     }      
     useEffect(() => {
-
       fetchUserResultList() })
 
   return (
