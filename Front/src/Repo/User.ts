@@ -2,6 +2,7 @@ import { ax } from '../config';
 import { IRepository } from "./IRepo";
 import UserResult from "../model/User";
 import config from "../config";
+import { getToken } from './auth';
 
 export interface UserResultFilter {
   keyword?: string
@@ -17,9 +18,12 @@ export class UserResultRepository implements IRepository<UserResult> {
       });
     return response.data.jwt
   }
-  async getAll(filter: UserResultFilter): Promise<UserResult[] | null> {
-    const params = {...filter}
-    const resp = await ax.get(`${this.urlPrefix}/meetings`, {params} )
+  async getAll(): Promise<UserResult[] | null> {
+    const resp = await ax.get(`${this.urlPrefix}/meetings`, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    }); 
     return resp.data.data
   }
 

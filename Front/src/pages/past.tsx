@@ -6,6 +6,7 @@ import { useAuth } from "react-oidc-context";
 import topic from "../model/topic";
 import Form from "../Component/form";
 import TopicCard from "../Component/card"
+import userResult from '../model/User';
 import './main.css';
 function Past(){
     console.log('main')

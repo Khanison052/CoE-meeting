@@ -12,13 +12,14 @@ import Repo from '../Repo'
 import User from '../model/User';
 import { ClassNames } from '@emotion/react';
 import axios from 'axios';
+import { setToken } from '../Repo/auth';
 
 function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const [User, setUser] = React.useState('');
   const [Pass, setPass] = React.useState('');
-  const [userResultList, setUserResultList] = useState<User[]>([])
+ 
   const [open, setOpen] = useState(false);
   const [modalText, setModalText] = useState('');
 
@@ -27,16 +28,6 @@ function Login() {
     setOpen(true);
   };
 
-  const fetchUserResultList = async () => {
-    let params: { keyword?: string, isPinned?: boolean } = {}
-    const result = await Repo.UserResults.getAll(params)
-    if (result) {
-      if (userResultList.length) {
-        setUserResultList([])
-      }
-      setUserResultList(result)
-    }
-  }
 
 
 
@@ -50,6 +41,7 @@ function Login() {
     try {
       const jwt = await Repo.UserResults.post(User, Pass);
       console.log(jwt);
+      setToken(jwt)
       navigate('/main');
     }
     catch (error) {
@@ -57,9 +49,7 @@ function Login() {
     }
   }
 
-  useEffect(() => {
-    fetchUserResultList()
-  })
+
 
   return (
     <>
