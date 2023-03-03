@@ -16,9 +16,9 @@ function Form(){
 
     return (
         <>
-         <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'grid', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px'}}>
+         <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'flex', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px'}}>
                 <img src={require("../images/logoengpsu.png")} className='image' />
-                <Typography sx={{ width: '80%',fontSize: 35, color: 'white' }}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
+                <Typography sx={{ width: '100%',fontSize: 42.3, color: 'white' }}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
         </Box>
 
 
@@ -26,7 +26,7 @@ function Form(){
             <Typography sx={{ fontSize: 30 ,color: 'white',textAlign:'center', marginLeft:'75%', display:'flex'}} onClick={Main} >หน้าหลัก </Typography>
         </Box>
         <Box sx={{ background:'#A6A6A6',position:'absolute',width: '20%',height: '7%',left: '80%',top: '15%',border: 1, display:'flex-start'}}>
-            <Typography sx={{ fontSize: 30 ,color: 'white',textAlign:'center', display:'flex' }} onClick={Logout} >ออกจากระบบ</Typography>
+            <Typography sx={{ fontSize: 30 ,color: 'white',textAlign:'center', display:'flex', flexDirection:'column' }} onClick={Logout} >ออกจากระบบ</Typography>
         </Box>
         <Box sx={{position: 'absolute', width: '30%',height: '7%',left: 0,top: '15%', background: '#D9D9D9' ,fontSize: 30 ,border: 1, textAlign:'left'}}>ผู้ใช้:</Box>
         <Box sx={{position: 'absolute',backgroundColor: '#A6A6A6',width: '30%',height: '7%',left:0,top:'22%',display: 'flex',flexDirection: 'column',fontSize:30,border: 1,textAlign:'center'}}>
