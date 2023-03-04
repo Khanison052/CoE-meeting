@@ -16,8 +16,6 @@ function Past() {
             setModalText(text);
             setOpen(true);
         };
-
-        try {
             const result = await Repo.UserResults.getAll()
             if (result) {
                 if (userResultList.length) {
@@ -25,15 +23,8 @@ function Past() {
                 }
                 setUserResultList(result)
             }
-        }
-        catch (error: any) {
-            if (error.response.status === 401) {
-                console.log('Unauthorized');
-                openModal('ไม่สามารถเชื่อมต่อได้โปรดเข้าสู่ระบบไหม');
-            } else {
-                console.log('Unexpected error:', error.message);
-            }
-        }
+    
+       
     }
     const onUpdateUserResult = (userResult: UserResult) => {
         // update userResult in userResultList
