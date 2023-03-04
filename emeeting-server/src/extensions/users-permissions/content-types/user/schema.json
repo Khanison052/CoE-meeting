@@ -72,6 +72,12 @@
       "relation": "manyToOne",
       "target": "api::department.department",
       "inversedBy": "User"
+    },
+    "meeting": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::meeting.meeting",
+      "inversedBy": "users_permissions_users"
     }
   }
 }

@@ -17,6 +17,7 @@ export class UserResultRepository implements IRepository<UserResult> {
       "password": password
       });
     return response.data.jwt
+
   }
   async getAll(): Promise<UserResult[] | null> {
     const resp = await ax.get(`${this.urlPrefix}/meetings`, {
@@ -26,7 +27,7 @@ export class UserResultRepository implements IRepository<UserResult> {
     }); 
     return resp.data.data
   }
-
+  
   async get(id: string|number): Promise<UserResult | null> {
     const resp = await ax.get<UserResult>(`${this.urlPrefix}/meetings/${id}`)
     return resp.data
