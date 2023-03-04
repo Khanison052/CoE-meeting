@@ -25,9 +25,10 @@ function TopicCard(props: Prop) {
     'รหัสประจำตัว',
     'แผนก'
   ];
-  function story() { navigate('/story') }
-
-  
+  function handleClick(){ story(userResult.id)}
+  function story(id: number) {
+    navigate(`/story/${id}`)
+  }
 
   return (<Box sx={{ position: 'relative', left: '30%', top: '200%', width: '70%', height: '30%' }} >
     <Card sx={{ Width: 700, maxheight: 400, margin: 1 }}>
@@ -35,8 +36,7 @@ function TopicCard(props: Prop) {
         sx={{ height: '50%', fontSize: '2rem', style: {} }}
         title={userResult.attributes.Topic}
         subheader={`สถานที่ประชุม: ${userResult.attributes.location.toString()} เวลา: ${userResult.attributes.date.toString()}`}
-
-        onClick={story}
+        onClick={(handleClick)}
       />
       <CardActionArea sx={{ width: "20%", height: '18%', left: '75%', background: '#721001' }} onClick={() => setPopup(true)}>
         <CardContent sx={{ height: '30%' }}>

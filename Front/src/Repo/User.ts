@@ -29,8 +29,12 @@ export class UserResultRepository implements IRepository<UserResult> {
   }
   
   async get(id: string|number): Promise<UserResult | null> {
-    const resp = await ax.get<UserResult>(`${this.urlPrefix}/meetings/${id}`)
-    return resp.data
+    const resp = await ax.get(`${this.urlPrefix}/meetings/${id}?populate=*`,{
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    }); 
+    return resp.data.data
   }
 
   async create(entity: Partial<UserResult>): Promise<UserResult | null> {

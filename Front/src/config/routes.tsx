@@ -33,7 +33,7 @@ const AppRoutes = () => {
         <Route path="today" element={<ProtectedRoute><Todaywb/></ProtectedRoute>}/>
         <Route path="past" element={<ProtectedRoute><Pastwb/></ProtectedRoute>} />
         <Route path="all" element={<ProtectedRoute><Allwb/></ProtectedRoute>} />
-        <Route path="story" element={<ProtectedRoute><Storywb/></ProtectedRoute>} />
+        <Route path="/story/:id"  element={<ProtectedRoute><Storywb/></ProtectedRoute>} />
         <Route path="test" element={<Test/>} />
       </Routes>
     </Router>

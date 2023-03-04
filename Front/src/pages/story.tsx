@@ -1,19 +1,37 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import { Button, Dialog, DialogTitle, Grid, IconButton, TextField, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import { Add, Close } from '@mui/icons-material/';
-import { useAuth } from "react-oidc-context";
-import topic from "../model/topic";
 import Form from "../Component/form";
 import Storycard from "../Component/storycard";
+import UserResult from '../model/User';
 import './main.css';
-function Story(){
+import Repo from "../Repo";
+import { ax } from "../config";
+import { useParams } from "react-router-dom";
+function Story() {
+    const [userResultList, setUserResultList] = useState<UserResult[]>([]);
+    const { id } = useParams<{ id: string }>();
+  
+    const fetchUserResultList = async () => {
+      const result = await Repo.UserResults.get(id ?? '');
+      if (result) {
+        setUserResultList([result]);
+        console.log(result)
+      }
+    };
+  
+    useEffect(() => {
+      fetchUserResultList();
+    }, []);
+  
     return (
-        <>
+      <>
         <Form></Form>
-        <Storycard></Storycard>
-        
-        </>
-)
-    }
-export default Story
+        {userResultList.map((userResult) => (
+          <Storycard key={userResult.id} userResult={userResult}></Storycard>
+        ))}
+      </>
+    );
+  }
+  
+  export default Story;
+  
