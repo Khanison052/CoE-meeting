@@ -36,7 +36,6 @@ function Login() {
       console.log(jwt);
       setToken(jwt);
       navigate('/main');
-
     }
     catch (error) {
       openModal('รหัสผ่านหรือชื่อผู้ใช้ไม่ถูกต้อง');
