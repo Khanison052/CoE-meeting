@@ -29,7 +29,7 @@ function TopicCard(props: Prop) {
 
   
 
-  return (<Box sx={{ position: 'absolute', left: '30%', top: '45%', width: '70%', height: '30%' }} >
+  return (<Box sx={{ position: 'relative', left: '30%', top: '200%', width: '70%', height: '30%' }} >
     <Card sx={{ Width: 700, maxheight: 400, margin: 1 }}>
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {} }}

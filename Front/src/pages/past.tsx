@@ -16,15 +16,15 @@ function Past() {
             setModalText(text);
             setOpen(true);
         };
-            const result = await Repo.UserResults.getAll()
-            if (result) {
-                if (userResultList.length) {
-                    setUserResultList([])
-                }
-                setUserResultList(result)
+        const result = await Repo.UserResults.getAll()
+        if (result) {
+            if (userResultList.length) {
+                setUserResultList([])
             }
-    
-       
+            setUserResultList(result)
+        }
+
+
     }
     const onUpdateUserResult = (userResult: UserResult) => {
         // update userResult in userResultList
@@ -40,15 +40,15 @@ function Past() {
         <>
             <Form></Form>
             <Box className={'title'} >การประชุมที่ผ่านมาแล้ว</Box>
-            <Box>
-                <Grid container spacing={{ xs: 10, md: 10 }} columns={{ xs: 2, sm: 8, md: 12, lg: 12, xl: 10 }}>
-                    {userResultList.map((userResult, index) =>
-                        <Grid item xs={2} sm={4} md={4} lg={3} xl={2} key={index}>
-                            <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
-                        </Grid>
-                    )}
-                </Grid>
-            </Box></>
+            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'left' }}>
+                {userResultList.map((userResult, index) =>
+                    <Box key={index} sx={{ height: '200px', margin: '1px' }}>
+                        <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
+                    </Box>
+                )}
+            </Box>
+
+        </>
     )
 };
 export default Past;

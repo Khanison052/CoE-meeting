@@ -16,7 +16,7 @@ function Form(){
 
     return (
         <>
-         <Box sx={{ position: 'absolute', width: '100%', height: '29%', background: '#721001', display: 'flex', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px'}}>
+         <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'flex', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px'}}>
                 <img src={require("../images/logoengpsu.png")} className='image' />
                 <Typography sx={{ width: '100%',fontSize: 42.3, color: 'white' }}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
         </Box>
