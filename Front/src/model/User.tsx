@@ -9,24 +9,76 @@ export default interface userResults {
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
-    Notice: Partial<topic>;
+    Notice: {
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          url: string;
+        };
+      };
+    };
     Certifying: {
-      url: string;
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          url: string;
+        };
+      };
     };
     Continued: {
-      url: string;
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          url: string;
+        };
+      };
     };
     Backlog: {
-      url: string;
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          url: string;
+        };
+      };
     };
     Present: {
-      url: string;
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          url: string;
+        };
+      };
     };
     Invite: {
-      url: string;
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          url: string;
+        };
+      };
     };
     Other: {
-      url: string;
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          url: string;
+        };
+      };
+    };
+    departments: {
+      data: {
+        id: number;
+        attributes: {
+          title: string;
+        };
+      };
     };
   };
 }

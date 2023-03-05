@@ -14,6 +14,7 @@ interface Prop {
 }
 
 function TopicCard(props: Prop) {
+
   const userResult = props.userResult
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,11 +22,10 @@ function TopicCard(props: Prop) {
   const [popup, setPopup] = useState(false);
   const [userResultList, setUserResultList] = useState<User[]>([])
   const xlsxHeading = [
-    'ชื่อ',
-    'รหัสประจำตัว',
     'แผนก'
   ];
-  function handleClick(){ story(userResult.id)}
+  const departments = userResult.attributes.departments.data;
+  function handleClick() { story(userResult.id) }
   function story(id: number) {
     navigate(`/story/${id}`)
   }
@@ -68,11 +68,13 @@ function TopicCard(props: Prop) {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow sx={{ backgroundColor: 'white' }}>
-              <TableCell sx={{ fontSize: '1vw' }}>{'นายภาคิน'}</TableCell>
-              <TableCell sx={{ fontSize: '1vw' }}>{'6510110347'}</TableCell>
-              <TableCell sx={{ fontSize: '1vw' }}>{'ชั้นปีการศึกษาที่ 1'}</TableCell>
-            </TableRow>
+            {Array.isArray(departments) && departments.map((department: any) => (
+              <TableRow key={department.id} sx={{ backgroundColor: 'white' }}>
+                <TableCell sx={{ fontSize: '1vw' }}>{department.attributes.title}</TableCell>
+              </TableRow>
+            ))}
+
+
           </TableBody>
         </Table>
       </Box>

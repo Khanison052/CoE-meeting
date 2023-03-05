@@ -20,7 +20,7 @@ export class UserResultRepository implements IRepository<UserResult> {
 
   }
   async getAll(): Promise<UserResult[] | null> {
-    const resp = await ax.get(`${this.urlPrefix}/meetings`, {
+    const resp = await ax.get(`${this.urlPrefix}/meetings?populate=*`, {
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
