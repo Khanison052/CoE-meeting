@@ -1,4 +1,3 @@
-import topic from "./topic"
 export default interface userResults {
   id: number;
   attributes: {
