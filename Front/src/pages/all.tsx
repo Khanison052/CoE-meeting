@@ -1,5 +1,5 @@
 import { useState, useEffect, ChangeEvent } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Form from "../Component/form";
 import TopicCard from "../Component/card"
@@ -7,54 +7,75 @@ import UserResult from '../model/User';
 import './main.css';
 import Repo from "../Repo";
 import Userrole from "../model/role";
+import React from "react";
 
 function All() {
-    const [userResultList, setUserResultList] = useState<UserResult[]>([])
-    const [UserRole, setUserRole] = useState<Userrole[]>([])
-    const fetchUserResultList = async () => {
-        
-        const result = await Repo.UserResults.getAll()
-        if (result) {
-            if (userResultList.length) {
-                setUserResultList([])
-            }
-            setUserResultList(result)
-        }
+  const [userResultList, setUserResultList] = useState<UserResult[]>([]);
+  const [UserRole, setUserRole] = useState<Userrole[]>([]);
+  const [departmentTitle, setDepartmentTitle] = useState<string>('');
+
+  const fetchUserResultList = async () => {
+    const result = await Repo.UserResults.getAll();
+    if (result) {
+      if (userResultList.length) {
+        setUserResultList([]);
+      }
+      setUserResultList(result);
     }
-    const fetchUserRole = async() => {
-        const result = await Repo.UserRole.getuser()
-        console.log(result)
-        if (result) {
-          setUserRole([result]);
-        }}
-    const onUpdateUserResult = (userResult: UserResult) => {
-        setUserResultList(prevUserResultList => prevUserResultList.map(item => item.id === userResult.id ? userResult : item))
+  };
+
+  const fetchUserRole = async () => {
+    const result = await Repo.UserRole.getuser();
+    if (result && result.department ) {
+      setUserRole([result]);
+      setDepartmentTitle(result.department.title);
     }
+  };
+
+  const onUpdateUserResult = (userResult: UserResult) => {
+    setUserResultList((prevUserResultList) =>
+      prevUserResultList.map((item) => (item.id === userResult.id ? userResult : item))
+    );
+  };
+
+  useEffect(() => {
+    fetchUserResultList();
+    fetchUserRole();
+  }, []);
+
+  useEffect(() => {
+    if (UserRole.length > 0) {
+      setDepartmentTitle(UserRole[0].department.title);
+    }
+  }, [UserRole]);
+  console.log(userResultList)
+  return (
+    <>
+      <React.Fragment>
+        {UserRole.map((UserRole) => (
+          <Form userRole={UserRole} />
+        ))}
+        <Box className={"title"}>การประชุมทั้งหมด</Box>
+      </React.Fragment>
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "left" }}>
+        {userResultList.map((userResult, index) => {
+          const datade = userResult.attributes.departments?.data;
+          const departTitle = Array.isArray(datade) ? datade[0]?.attributes?.title : datade?.attributes?.title;
+          console.log(departTitle)
+          if (departmentTitle && departTitle.includes(departmentTitle)) {
+            return (
+              <Box key={index} sx={{ height: "200px", margin: "1px" }}>
+                <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
+              </Box>
+            );
+          }
+        })}
+
+      </Box>
+    </>
+  );
+}
+
+export default All;
 
 
-    useEffect(() => {
-        fetchUserResultList();
-        fetchUserRole();
-      }, []);
-    
-
-
-    return (
-        <>
-            {UserRole.map((UserRole) => (
-        <Form userRole={UserRole}></Form>
-      ))}
-            <Box className={'title'} >การประชุมทั้งหมด</Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'left' }}>
-                {userResultList.map((userResult, index) =>
-                    <Box key={index} sx={{ height: '200px', margin: '1px' }}>
-                        <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
-                    </Box>
-                )}
-            </Box>
-            
-
-        </>
-    )
-};
-export default All

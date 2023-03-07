@@ -9,9 +9,6 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './login.css';
 import Repo from '../Repo'
-import User from '../model/User';
-import { ClassNames } from '@emotion/react';
-import axios from 'axios';
 import { setToken } from '../Repo/auth';
 
 function Login() {

@@ -23,6 +23,7 @@ function Story() {
       if (result) {
         setUserRole([result]);
       }}
+    
   useEffect(() => {
     fetchUserResultList();
     fetchUserRole();
