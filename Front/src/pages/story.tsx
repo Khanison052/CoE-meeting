@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import Userrole from "../model/role";
 function Story() {
     const [userResultList, setUserResultList] = useState<UserResult[]>([]);
-    const [UserRole, setUserrole] = useState<Userrole[]>([])
+    const [UserRole, setUserRole] = useState<Userrole[]>([])
     const { id } = useParams<{ id: string }>();
   
     const fetchUserResultList = async () => {
@@ -19,13 +19,10 @@ function Story() {
     };
     const fetchUserRole = async() => {
       const result = await Repo.UserRole.getuser()
+      console.log(result)
       if (result) {
-          if (UserRole.length) {
-              setUserrole([])
-          }
-          setUserrole(result)
-      }
-  }
+        setUserRole([result]);
+      }}
   useEffect(() => {
     fetchUserResultList();
     fetchUserRole();
@@ -34,8 +31,10 @@ function Story() {
 
   
     return (
-      <>
+      <>{UserRole.map((UserRole) => (
         <Form userRole={UserRole}></Form>
+      ))}
+        
         {userResultList.map((userResult) => (
           <Storycard key={userResult.id} userResult={userResult}></Storycard>
         ))}

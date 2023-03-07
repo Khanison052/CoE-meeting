@@ -9,7 +9,7 @@ import './main.css';
 import Userrole from "../model/role";
 function Today() {
     const [userResultList, setUserResultList] = useState<UserResult[]>([])
-    const [UserRole, setUserrole] = useState<Userrole[]>([])
+    const [UserRole, setUserRole] = useState<Userrole[]>([])
     const [open, setOpen] = useState(false);
     const [modalText, setModalText] = useState('');
     const fetchUserResultList = async () => {
@@ -27,15 +27,12 @@ function Today() {
 
 
     }
-    const fetchUserRole = async () => {
+    const fetchUserRole = async() => {
         const result = await Repo.UserRole.getuser()
+        console.log(result)
         if (result) {
-            if (UserRole.length) {
-                setUserrole([])
-            }
-            setUserrole(result)
-        }
-    }
+          setUserRole([result]);
+        }}
     const onUpdateUserResult = (userResult: UserResult) => {
         setUserResultList(prevUserResultList => prevUserResultList.map(item => item.id === userResult.id ? userResult : item))
     }
@@ -48,7 +45,9 @@ function Today() {
 
     return (
         <>
-            <Form userRole={UserRole}></Form>
+            {UserRole.map((UserRole) => (
+        <Form userRole={UserRole}></Form>
+      ))}
             <Box className={'title'} >การประชุมที่วันนี้</Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'left' }}>
                 {userResultList.map((userResult, index) =>

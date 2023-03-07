@@ -10,7 +10,7 @@ import Userrole from "../model/role";
 
 function Past() {
     const [userResultList, setUserResultList] = useState<UserResult[]>([])
-    const [UserRole, setUserrole] = useState<Userrole[]>([])
+    const [UserRole, setUserRole] = useState<Userrole[]>([])
     const [open, setOpen] = useState(false);
     const [modalText, setModalText] = useState('');
     const fetchUserResultList = async () => {
@@ -26,13 +26,11 @@ function Past() {
             setUserResultList(result)
         }
     }
-    const fetchUserRole = async() => {
+    const fetchUserRole = async () => {
         const result = await Repo.UserRole.getuser()
+        console.log(result)
         if (result) {
-            if (UserRole.length) {
-                setUserrole([])
-            }
-            setUserrole(result)
+            setUserRole([result]);
         }
     }
     const onUpdateUserResult = (userResult: UserResult) => {
@@ -42,12 +40,14 @@ function Past() {
     useEffect(() => {
         fetchUserResultList();
         fetchUserRole();
-      }, []);
-    
+    }, []);
+
 
     return (
-        <>  
-            <Form userRole={UserRole}></Form>
+        <>
+            {UserRole.map((UserRole) => (
+                <Form userRole={UserRole}></Form>
+            ))}
             <Box className={'title'} >การประชุมที่ผ่านมาแล้ว</Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'left' }}>
                 {userResultList.map((userResult, index) =>

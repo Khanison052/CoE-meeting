@@ -9,7 +9,7 @@ export class UserRoleRepository  {
   urlPrefix = 'http://localhost:1337/api'
   
   
-  async getuser(): Promise<Userrole[] | null> {
+  async getuser(): Promise<Userrole | null> {
     const resp = await ax.get(`${this.urlPrefix}/users/me?populate=role`, {
       headers: {
         Authorization: `Bearer ${getToken()}`,

@@ -10,8 +10,7 @@ interface Prop {
 function Storycard(props: Prop) {
   const userResult = props.userResult;
   const navigate = useNavigate();
-  const [tabIndex, setTabIndex] = useState(0);
-  const [popup, setPopup] = useState(false);
+  console.log(userResult)
 
   const data1 = userResult.attributes.Notice.data;
   const data2 = userResult.attributes.Certifying.data;
