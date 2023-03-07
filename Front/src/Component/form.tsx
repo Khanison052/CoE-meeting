@@ -51,9 +51,9 @@ function Form(props: Prop) {
                 รายการ
             </Box>
             <Box sx={{ position: 'absolute', background: '#ffffff', width: '30%', height: '100%', left: 0, top: '29%', border: 1, display: 'flex' , flexDirection: 'column' }}>
-                <Typography sx={{ fontSize: 27, color: 'black', margin: 10 }} onClick={Today} >การประชุมวันนี้</Typography>
-                <Typography sx={{ fontSize: 27, color: 'black', margin: 10 }} onClick={All} >การประชุมทั้งหมด</Typography>
-                <Typography sx={{ fontSize: 27, color: 'black', margin: 10 }} onClick={Past} >การประชุมที่ผ่านมาแล้ว</Typography></Box>
+                <Typography sx={{ fontSize: 26, color: 'black', margin: 10 }} onClick={Today} >การประชุมวันนี้</Typography>
+                <Typography sx={{ fontSize: 26, color: 'black', margin: 10 }} onClick={All} >การประชุมทั้งหมด</Typography>
+                <Typography sx={{ fontSize: 26, color: 'black', margin: 10 }} onClick={Past} >การประชุมที่ผ่านมาแล้ว</Typography></Box>
             <Box sx={{ position: 'absolute', backgroundColor: '#D9D9D9', height: '7%', width: '70%', top: '22%', left: '30.1%', display: 'flex', flexDirection: 'column', fontSize: 30, border: 1, textAlign: 'center' }}>แสดงรายละเอียดการประชุม</Box>
         </>
     )
