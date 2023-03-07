@@ -30,8 +30,8 @@ function TopicCard(props: Prop) {
     navigate(`/story/${id}`)
   }
 
-  return (<Box sx={{ position: 'relative', left: '30%', top: '200%', width: '70%', height: '30%' }} >
-    <Card sx={{ Width: 700, maxheight: 400, margin: 1 }}>
+  return (<Box sx={{ position: 'relative', left: '30%', top: '150%', width: '70%', height: '30%' }} >
+    <Card sx={{ Width: 700, maxheight: 400, margin: 2 }}>
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {} }}
         title={userResult.attributes.Topic}

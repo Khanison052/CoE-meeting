@@ -18,7 +18,7 @@ function Login() {
   const [Pass, setPass] = React.useState('');
   const [open, setOpen] = useState(false);
   const [modalText, setModalText] = useState('');
-  
+
   const openModal = (text: string) => {
     setModalText(text);
     setOpen(true);
@@ -53,18 +53,37 @@ function Login() {
         </div>
         <Box className="box">
           <Typography sx={{ fontSize: 60, color: 'white' }}  ></Typography>
-          <div className="image">
-            <img src={require("../images/logopsupass.png")} />
-          </div>
+          
+        <div>
+             <img src={require("../images/logopsupass.png")} className="boxImgPSUpassport" />
+           </div>
+        
 
-          <TextField id="box-input" label="Username" sx={{ backgroundColor: 'white' }}
-            value={User} onChange={handleChangeuser} variant="outlined" />
+          <TextField 
+            id="box-input" 
+            label="Username" 
+            sx={{ backgroundColor: 'white' }}
+            value={User} 
+            onChange={handleChangeuser} 
+            variant="outlined" 
+            className="boxUsername"
+          />
 
-          <TextField id="box-input" label="Password" sx={{ backgroundColor: 'white' }}
-            value={Pass} onChange={handleChangepass} variant="outlined" type="password"  />
-          <Box className="boxs"></Box>
-          <Button variant='contained' sx={{ fontSize: 'large' }} onClick={Loginto} >
-            <LoginIcon sx={{ mr: 1 }} />
+          <TextField 
+            id="box-input" 
+            label="Password" 
+            sx={{ backgroundColor: 'white' }}
+            value={Pass} 
+            onChange={handleChangepass} 
+            variant="outlined" 
+            type="password"  
+            className="boxPassword"
+            style={{ margin: "10px" }}
+          />
+
+
+          <Button style={{ backgroundColor: '#A9A9A9', borderRadius: '30px' }} variant='contained' sx={{ fontSize: 'large', color: 'black', margin: "10px" , textAlign: 'center'}} onClick={Loginto} >
+            <LoginIcon sx={{ mr: 1 , color: 'black' }} style={{ backgroundColor: '#A9A9A9'}} />
             เข้าสู่ระบบ
           </Button>
         </Box>
@@ -85,4 +104,3 @@ function Login() {
   
 };
 export default Login;
-

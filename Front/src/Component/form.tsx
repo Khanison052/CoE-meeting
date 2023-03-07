@@ -27,7 +27,8 @@ function Form(props: Prop){
                 <img src={require("../images/logoengpsu.png")} className='image' />
                 <Typography sx={{ width: '100%',fontSize: 42.3, color: 'white' }}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
         </Box>
-
+        
+        
 
         <Box sx={{ background:'#A6A6A6',position:'absolute',width: '50%',height: '7%',left: '30%',top: '15%',border: 1, display:'flex'}}>
             <Typography sx={{ fontSize: 30 ,color: 'white',textAlign:'center', marginLeft:'75%', display:'flex'}} onClick={Main} >หน้าหลัก </Typography>
