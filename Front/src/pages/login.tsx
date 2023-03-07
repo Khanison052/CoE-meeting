@@ -53,7 +53,7 @@ function Login() {
         </div>
         <Box className="box">
           <Typography sx={{ fontSize: 60, color: 'white' }}  ></Typography>
-          
+          <Box className="boxCoEEmeeting" sx={{ fontSize: 70, color: 'white' }}>CoE E-meeting</Box>  
         <div>
              <img src={require("../images/logopsupass.png")} className="boxImgPSUpassport" />
            </div>
