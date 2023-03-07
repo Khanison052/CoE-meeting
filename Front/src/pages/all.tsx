@@ -41,7 +41,8 @@ function All() {
     useEffect(() => {
         fetchUserResultList();
         fetchUserRole();
-    }, [userResultList])
+      }, []);
+    
 
 
     return (

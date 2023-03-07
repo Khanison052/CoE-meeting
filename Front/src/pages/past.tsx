@@ -38,11 +38,12 @@ function Past() {
     const onUpdateUserResult = (userResult: UserResult) => {
         setUserResultList(prevUserResultList => prevUserResultList.map(item => item.id === userResult.id ? userResult : item))
     }
-    fetchUserRole();
 
     useEffect(() => {
         fetchUserResultList();
-    }, [userResultList])
+        fetchUserRole();
+      }, []);
+    
 
     return (
         <>  

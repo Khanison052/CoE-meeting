@@ -15,7 +15,6 @@ export class UserRoleRepository  {
         Authorization: `Bearer ${getToken()}`,
       },
     }); 
-    console.log(resp.data)
     return resp.data
   }
   

@@ -1,11 +1,9 @@
 import { useState, useEffect, ChangeEvent } from "react";
-import { Button, Dialog, DialogTitle, Grid, IconButton, TextField, Typography } from "@mui/material";
 import Form from "../Component/form";
 import Storycard from "../Component/storycard";
 import UserResult from '../model/User';
 import './main.css';
 import Repo from "../Repo";
-import { ax } from "../config";
 import { useParams } from "react-router-dom";
 import Userrole from "../model/role";
 function Story() {
@@ -17,7 +15,6 @@ function Story() {
       const result = await Repo.UserResults.get(id ?? '');
       if (result) {
         setUserResultList([result]);
-        console.log(result)
       }
     };
     const fetchUserRole = async() => {
@@ -30,9 +27,9 @@ function Story() {
       }
   }
   useEffect(() => {
-      fetchUserResultList();
-      fetchUserRole();
-  }, [userResultList])
+    fetchUserResultList();
+    fetchUserRole();
+  }, []);
 
 
   

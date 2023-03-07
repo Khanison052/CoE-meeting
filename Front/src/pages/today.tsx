@@ -40,12 +40,11 @@ function Today() {
         setUserResultList(prevUserResultList => prevUserResultList.map(item => item.id === userResult.id ? userResult : item))
     }
 
-
     useEffect(() => {
         fetchUserResultList();
         fetchUserRole();
-    }, [userResultList])
-
+      }, []);
+    
 
     return (
         <>
