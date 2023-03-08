@@ -5,6 +5,7 @@ import Todaywb from '../pages/today'
 import Pastwb from '../pages/past'
 import Allwb from '../pages/all'
 import Storywb from '../pages/story'
+import ManageUserwb from '../pages/manageuser';
 import Test from '../pages/test'
 import { getToken } from '../Repo/auth';
 
@@ -34,6 +35,7 @@ const AppRoutes = () => {
         <Route path="past" element={<ProtectedRoute><Pastwb/></ProtectedRoute>} />
         <Route path="all" element={<ProtectedRoute><Allwb/></ProtectedRoute>} />
         <Route path="/story/:id"  element={<ProtectedRoute><Storywb/></ProtectedRoute>} />
+        <Route path="/manageuser"  element={<ProtectedRoute><ManageUserwb/></ProtectedRoute>} />
         <Route path="test" element={<Test/>} />
       </Routes>
     </Router>
