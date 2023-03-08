@@ -7,9 +7,11 @@ export default interface Userrole {
   role: {
     id: number;
     name: string;
+    type :string
   }
   department:{
     id:number;
     title:string;
+    
   }
   };
