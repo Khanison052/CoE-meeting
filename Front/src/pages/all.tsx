@@ -62,7 +62,7 @@ function All() {
           const datade = userResult.attributes.departments?.data;
           const departTitle = Array.isArray(datade) ? datade[0]?.attributes?.title : datade?.attributes?.title;
           console.log(departTitle)
-          if (departmentTitle && departTitle.includes(departmentTitle)) {
+          if (departmentTitle === "admin" || (departmentTitle && departTitle.includes(departmentTitle))) {
             return (
               <Box key={index} sx={{ height: "200px", margin: "1px" }}>
                 <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
