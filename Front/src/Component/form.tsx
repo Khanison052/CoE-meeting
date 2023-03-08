@@ -55,12 +55,12 @@ function Form(props: Prop) {
                 รายการ
             </Box>
             <Box sx={{ position: 'absolute', background: '#ffffff', width: '30%', height: '100%', left: 0, top: '29%', border: 'none',borderRight:1.5, display: 'flex' , flexDirection: 'column' }}>
-                <Typography sx={{ fontSize: 26, color: 'black', margin: 5 }} onClick={Today} >การประชุมวันนี้</Typography>
-                <Typography sx={{ fontSize: 26, color: 'black', margin: 5 }} onClick={All} >การประชุมทั้งหมด</Typography>
-                <Typography sx={{ fontSize: 26, color: 'black', margin: 5 }} onClick={Past} >การประชุมที่ผ่านมาแล้ว</Typography>
-                {userRole.role.name == 'admin'?(<Typography sx={{ fontSize: 26, color: 'black', margin: 5 }} onClick={ManageUser} >จัดการสมาชิก</Typography>):(null)}
+                <Typography sx={{ fontSize: 26, color: 'black', margin: 3.5 }} onClick={Today} > • การประชุมวันนี้</Typography>
+                <Typography sx={{ fontSize: 26, color: 'black', margin: 3.5 }} onClick={All} > • การประชุมทั้งหมด</Typography>
+                <Typography sx={{ fontSize: 26, color: 'black', margin: 3.5 }} onClick={Past} > • การประชุมที่ผ่านมาแล้ว</Typography>
+                {userRole.role.name == 'admin'?(<Typography sx={{ fontSize: 26, color: 'black', margin: 3.5 }} onClick={ManageUser} > • จัดการสมาชิก</Typography>):(null)}
             </Box>
-            <Box sx={{ position: 'absolute', backgroundColor: '#D9D9D9', height: '7%', width: '69.98%', top: '22%', left: '30.05%', display: 'flex', flexDirection: 'column', fontSize: 30, border: 'none', textAlign: 'center' }}>แสดงรายละเอียดการประชุม</Box>
+            <Box sx={{ position: 'absolute', backgroundColor: '#D9D9D9', height: '7%', width: '69.97%', top: '22%', left: '30.05%', display: 'flex', flexDirection: 'column', fontSize: 30, border: 'none', textAlign: 'center' }}>แสดงรายละเอียดการประชุม</Box>
         </>
     )
 }
