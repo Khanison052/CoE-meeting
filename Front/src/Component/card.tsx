@@ -38,12 +38,12 @@ function TopicCard(props: Prop) {
         subheader={`สถานที่ประชุม: ${userResult.attributes.location.toString()} เวลา: ${userResult.attributes.date.toString()}`}
         onClick={(handleClick)}
       />
-      <CardActionArea sx={{ width: "20%", height: '18%', left: '75%', background: '#721001' }} onClick={() => setPopup(true)}>
+      <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', background: '#FFA07A', borderRadius:'40px',boxShadow:'0px 0px 3.5px' }} onClick={() => setPopup(true)}>
         <CardContent sx={{ height: '30%' }}>
           <Grid container spacing={2} columns={5}>
             <Grid item xs={5}>
-              <Typography component="div" sx={{ fontSize: '1vw', color: 'white', textAlign: 'center' }}>
-                {'รายชื่อสมาชิก'}
+              <Typography component="div" sx={{ fontSize: '1.13vw', color: 'white', textAlign: 'center' }}>
+                {'ผู้ประชุมที่เกี่ยวข้อง'}
               </Typography>
             </Grid>
           </Grid>
@@ -54,7 +54,7 @@ function TopicCard(props: Prop) {
     <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%", fontSize: '1vw' } }} open={popup} onClose={() => setPopup(false)}>
       <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Tabs value={tabIndex} onChange={(event: React.SyntheticEvent, newValue: number) => setTabIndex(newValue)} aria-label="basic tabs example">
-          <Tab sx={{ fontSize: '1vw' }} label="สมาชิก" />
+          <Tab sx={{ fontSize: '1vw' }} label="ผู้ประชุมที่เกี่ยวข้อง" />
         </Tabs>
         <IconButton onClick={() => setPopup(false)}>
           <Close />

@@ -64,7 +64,7 @@ function All() {
           console.log(departTitle)
           if (departmentTitle === "admin" || (departmentTitle && departTitle.includes(departmentTitle))) {
             return (
-              <Box key={index} sx={{ height: "200px", margin: "1px" }}>
+              <Box key={index} sx={{ height: "250px", margin: "1px" }}>
                 <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
               </Box>
             );

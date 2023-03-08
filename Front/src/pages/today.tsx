@@ -7,58 +7,78 @@ import UserResult from '../model/User';
 import Repo from "../Repo";
 import './main.css';
 import Userrole from "../model/role";
+import React from "react";
 function Today() {
-    const [userResultList, setUserResultList] = useState<UserResult[]>([])
-    const [UserRole, setUserRole] = useState<Userrole[]>([])
-    const [open, setOpen] = useState(false);
-    const [modalText, setModalText] = useState('');
+
+
+    const [userResultList, setUserResultList] = useState<UserResult[]>([]);
+    const [UserRole, setUserRole] = useState<Userrole[]>([]);
+    const [departmentTitle, setDepartmentTitle] = useState<string>('');
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
     const fetchUserResultList = async () => {
-        const openModal = (text: string) => {
-            setModalText(text);
-            setOpen(true);
-        };
-        const result = await Repo.UserResults.getAll()
+        const result = await Repo.UserResults.getAll();
         if (result) {
             if (userResultList.length) {
-                setUserResultList([])
+                setUserResultList([]);
             }
-            setUserResultList(result)
+            setUserResultList(result);
         }
+    };
 
+    const fetchUserRole = async () => {
+        const result = await Repo.UserRole.getuser();
+        if (result && result.department) {
+            setUserRole([result]);
+            setDepartmentTitle(result.department.title);
+        }
+    };
 
-    }
-    const fetchUserRole = async() => {
-        const result = await Repo.UserRole.getuser()
-        console.log(result)
-        if (result) {
-          setUserRole([result]);
-        }}
     const onUpdateUserResult = (userResult: UserResult) => {
-        setUserResultList(prevUserResultList => prevUserResultList.map(item => item.id === userResult.id ? userResult : item))
-    }
+        setUserResultList((prevUserResultList) =>
+            prevUserResultList.map((item) => (item.id === userResult.id ? userResult : item))
+        );
+    };
 
     useEffect(() => {
         fetchUserResultList();
         fetchUserRole();
-      }, []);
-    
+    }, []);
 
+    useEffect(() => {
+        if (UserRole.length > 0) {
+            setDepartmentTitle(UserRole[0].department.title);
+        }
+    }, [UserRole]);
+    console.log(userResultList)
     return (
         <>
-            {UserRole.map((UserRole) => (
-        <Form userRole={UserRole}></Form>
-      ))}
-            <Box className={'title'} >การประชุมที่วันนี้</Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'left' }}>
-                {userResultList.map((userResult, index) =>
-                    <Box key={index} sx={{ height: '200px', margin: '1px' }}>
-                        <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
-                    </Box>
-                )}
-            </Box>
+            <React.Fragment>
+                {UserRole.map((UserRole) => (
+                    <Form userRole={UserRole} />
+                ))}
+                <Box className={"title"}>การประชุมวันนี้</Box>
+            </React.Fragment>
+            <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "left" }}>
+                {userResultList.map((userResult, index) => {
+                    const datade = userResult.attributes.departments?.data;
+                    const departTitle = Array.isArray(datade) ? datade[0]?.attributes?.title : datade?.attributes?.title;
+                    console.log(departTitle)
+                    if (departmentTitle === "admin" || (departmentTitle && departTitle.includes(departmentTitle)) && formattedDate === userResult.attributes.date) {
+                        return (
+                            <Box key={index} sx={{ height: "250px", margin: "1px" }}>
+                                <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
+                            </Box>
+                        );
+                    }
+                })}
 
+            </Box>
         </>
-    )
-};
+    );
+}
 
 export default Today;
