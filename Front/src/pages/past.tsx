@@ -54,7 +54,7 @@ function Past() {
     }, [UserRole]);
     console.log(userResultList)
     return (
-        <>  <Box className={"title"}>การประชุมที่ผ่านมา</Box>
+        <>  <Box className={"title"}>การประชุมที่ผ่านมาแล้ว</Box>
             <React.Fragment>
                 {UserRole.map((UserRole) => (
                     <Form userRole={UserRole} />
