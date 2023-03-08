@@ -38,27 +38,24 @@ export class UserResultRepository implements IRepository<UserResult> {
   }
 
   async create(entity: Partial<UserResult>): Promise<UserResult | null> {
-    const resp = await ax.post<UserResult>(`${this.urlPrefix}/userResult`, entity)
+    const resp = await ax.post<UserResult>(`${this.urlPrefix}/meetings/${entity.id}?populate=notice`, entity,{
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+        'Content-Type': 'multipart/form-data',
+      },
+    }); 
 
     return resp.data
   }
 
   async update(entity: Partial<UserResult>): Promise<UserResult | null> {
-    const resp = await ax.put<UserResult>(`${this.urlPrefix}/userResult/${entity.id}`, entity)
-
+    const resp = await ax.put<UserResult>(`${this.urlPrefix}/meetings/${entity.id}?populate=*`, entity,{
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+        'Content-Type': 'multipart/form-data',
+      },
+    }); 
     return resp.data
   }
 
-  async delete(id: string|number): Promise<void> {
-    await ax.delete<void>(`${this.urlPrefix}/userResult/${id}`)
-  }
-
-  async view(id: string|number): Promise<UserResult | null> {
-    const resp = await ax.get<UserResult>(`${this.urlPrefix}/userResult/view/${id}`)
-
-    return resp.data
-  }
-
-
-  
 }

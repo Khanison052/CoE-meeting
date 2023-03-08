@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import UserResult from "../model/User";
 import axios from 'axios';
+import Repo from "../Repo";
 interface Prop {
   userResult: UserResult;
   isadmin: boolean;
@@ -32,10 +33,27 @@ function Storycard(props: Prop) {
     const url = Array.isArray(data) ? data[0]?.attributes?.url : data?.attributes?.url;
     return url
   }
-  function handleFileSelect(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log(event.target.files?.[0]);
+
+  async function handleFileSelect(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    console.log(file)
+    if (!file) {
+      return;
+    }
+    const formData = new FormData();
+    formData.append('file', file);
+    console.log(formData)
+    try {
+      console.log('File uploaded successfully:', formData);
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
     setIsUploadDialogOpen(false);
   }
+
+
+
+
 
   return (
     <>
