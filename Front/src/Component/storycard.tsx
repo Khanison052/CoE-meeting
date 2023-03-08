@@ -60,10 +60,10 @@ function Storycard(props: Prop) {
       <Box sx={{ position: 'absolute', left: '33%', top: '35%', width: '30%', height: '10%', background: '#ffffff', margin: -2 }}>
         <Typography sx={{ fontSize: 40 }}>{userResult.attributes.Topic}</Typography>
       </Box>
-      <Box sx={{ position: 'absolute', left: '33%', top: '40%', width: '60%', height: '70%', background: '#D9D9D9', flexdirection: 'column' }}>
+      <Box sx={{ position: 'absolute', left: '31.7%', top: '40%', width: '66.5%', height: '80%', background: '#D9D9D9', flexdirection: 'column' }}>
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '2rem', display: 'inline-block' }}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -10, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block' }}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data1 ? (
           <a href={`http://localhost:1337${geturl(data1)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
@@ -73,8 +73,8 @@ function Storycard(props: Prop) {
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '2rem', display: 'inline-block' }}>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -10, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block' }}>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data2 ? (
           <a href={`http://localhost:1337${geturl(data2)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
@@ -84,8 +84,8 @@ function Storycard(props: Prop) {
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '2rem', display: 'inline-block' }}>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -10, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block' }}>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data3 ? (
           <a href={`http://localhost:1337${geturl(data3)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
@@ -95,8 +95,8 @@ function Storycard(props: Prop) {
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '2rem', display: 'inline-block' }}>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -10, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block' }}>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data4 ? (
           <a href={`http://localhost:1337${geturl(data4)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
@@ -106,8 +106,8 @@ function Storycard(props: Prop) {
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '2rem', display: 'inline-block' }}>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -10, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block' }}>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data5 ? (
           <a href={`http://localhost:1337${geturl(data5)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
@@ -116,8 +116,8 @@ function Storycard(props: Prop) {
         )}
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '2rem', display: 'inline-block' }}>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -10, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block' }}>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
 
         {data6 ? (
@@ -127,8 +127,8 @@ function Storycard(props: Prop) {
         )}
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '2rem', display: 'inline-block' }}>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -10, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block' }}>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data7 ? (
           <a href={`http://localhost:1337${geturl(data7)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
