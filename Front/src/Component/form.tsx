@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../Component/form.css';
 import Userrole from "../model/role"
+import { colors } from "@mui/material";
 interface Prop {
     userRole: Userrole;
 }
@@ -32,29 +33,29 @@ function Form(props: Prop) {
             </Box>
 
 
-            <Box sx={{ background: '#A6A6A6', position: 'absolute', width: '50%', height: '7%', left: '30%', top: '15%', border: 1, display: 'flex' }}>
+            <Box sx={{ background: '#A6A6A6', position: 'absolute', width: '49.5%', height: '7%', left: '30%', top: '15%', borderRight: 1.7, display: 'flex' }}>
                 <Typography sx={{ fontSize: 30, color: 'white', textAlign: 'center', marginLeft: '75%', display: 'flex' }} onClick={Main} >หน้าหลัก </Typography>
             </Box>
-            <Box sx={{ background: '#A6A6A6', position: 'absolute', width: '20%', height: '7%', left: '80%', top: '15%', border: 1, display: 'flex-start' }}>
+            <Box sx={{ background: '#A6A6A6', position: 'absolute', width: '20.4%', height: '7%', left: '79.59%', top: '15%', border: 'none', display: 'flex-start' }}>
                 <Typography sx={{ fontSize: 30, color: 'white', textAlign: 'center', display: 'flex', flexDirection: 'column' }} onClick={Logout} >ออกจากระบบ</Typography>
             </Box>
 
 
             {userRole && (
-                <Box sx={{ position: 'absolute', width: '30%', height: '7%', left: 0, top: '15%', background: '#D9D9D9', fontSize: 25, border: 1, textAlign: 'left' }}>
+                <Box sx={{ position: 'absolute', width: '30%', height: '7%', left: 0, top: '16%', background: 'white', fontSize: 25, border: 'none', textAlign: 'center' }}>
                     ผู้ใช้: {userRole.username}
                 </Box>
             )}
 
 
-            <Box sx={{ position: 'absolute', backgroundColor: '#A6A6A6', width: '30%', height: '7%', left: 0, top: '22%', display: 'flex', flexDirection: 'column', fontSize: 30, border: 1, textAlign: 'center' }}>
+            <Box sx={{ position: 'absolute', backgroundColor: '#A6A6A6', width: '30%', height: '7%', left: 'none', top: '22%', display: 'flex', flexDirection: 'column', fontSize: 30, borderRight: 1.5 , textAlign: 'center' }}>
                 รายการ
             </Box>
-            <Box sx={{ position: 'absolute', background: '#ffffff', width: '30%', height: '100%', left: 0, top: '29%', border: 1, display: 'flex' , flexDirection: 'column' }}>
+            <Box sx={{ position: 'absolute', background: '#ffffff', width: '30%', height: '100%', left: 0, top: '29%', border: 'none',borderRight:1.5, display: 'flex' , flexDirection: 'column' }}>
                 <Typography sx={{ fontSize: 26, color: 'black', margin: 10 }} onClick={Today} >การประชุมวันนี้</Typography>
                 <Typography sx={{ fontSize: 26, color: 'black', margin: 10 }} onClick={All} >การประชุมทั้งหมด</Typography>
                 <Typography sx={{ fontSize: 26, color: 'black', margin: 10 }} onClick={Past} >การประชุมที่ผ่านมาแล้ว</Typography></Box>
-            <Box sx={{ position: 'absolute', backgroundColor: '#D9D9D9', height: '7%', width: '70%', top: '22%', left: '30.1%', display: 'flex', flexDirection: 'column', fontSize: 30, border: 1, textAlign: 'center' }}>แสดงรายละเอียดการประชุม</Box>
+            <Box sx={{ position: 'absolute', backgroundColor: '#D9D9D9', height: '7%', width: '69.98%', top: '22%', left: '30.05%', display: 'flex', flexDirection: 'column', fontSize: 30, border: 'none', textAlign: 'center' }}>แสดงรายละเอียดการประชุม</Box>
         </>
     )
 }
