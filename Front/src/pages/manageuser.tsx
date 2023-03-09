@@ -35,9 +35,13 @@ function ManageUser() {
         );
     };
     const onCreate = async (ann: any) => {
-        ann.role = {connect: [{id: 1}]};
-        console.log(ann)
-        await Repo.UserRole.create(ann)
+        const user = ann;
+        const { department: { title, ...rest } } = user;
+        const updatedUser = { ...user, department: { connect: [{ id: 1 }] } };
+        updatedUser.role = { connect: [{ id: 1 }] };
+
+        console.log(updatedUser)
+        await Repo.UserRole.create(updatedUser)
         fetchUserRolelist()
         setCreateFormPopup(false)
     }

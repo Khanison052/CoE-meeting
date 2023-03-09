@@ -1,6 +1,6 @@
-import { Button, TextField } from "@mui/material";
+import { Button, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Userrole from "../model/role";
 
 interface Prop {
@@ -9,30 +9,60 @@ interface Prop {
 }
 
 function UserroleForm(props: Prop) {
+    const Userrole = props.Userrole
     const usernameRef = useRef<HTMLInputElement>(null)
     const usersurnameRef = useRef<HTMLInputElement>(null)
     const email = useRef<HTMLInputElement>(null)
     const password = useRef<HTMLInputElement>(null)
+    const [department, setDepartment] = useState<Userrole["department"]>();
+    const [valuede, setValuede] = useState<number>(0);
 
     const onSubmit = () => {
+        console.log(department)
         props.callbackFn({
             id: props.Userrole.id,
-            username:  usernameRef.current?.value,
+            username: usernameRef.current?.value,
             email: email.current?.value,
             password: password.current?.value,
-    })
+            department : department
+        }) 
     }
+    const handleDepartmentChange = (event: SelectChangeEvent<number>) => {
+        if (event.target.value === 1){
+            const newDepartment = { id: 1, title: "นักศึกษาชั้นปีที่1" };
+            setDepartment(newDepartment);
+            setValuede(1); 
+        }
+        if (event.target.value === 2){
+            const newDepartment = { id: 2, title: "นักศึกษาชั้นปีที่2" };
+            setDepartment(newDepartment);
+            setValuede(2); 
+        }
+      };
 
     return (
         <Box>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth sx={{ minWidth: 120 }} label="username" variant="outlined" defaultValue={props.Userrole.username} inputRef={usernameRef} />
+                <TextField fullWidth sx={{ minWidth: 120 }} label="ชื่อผู้ใช้" variant="outlined" defaultValue={props.Userrole.username} inputRef={usernameRef} />
             </div>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth  sx={{ minWidth: 120 }} rows={4} label="email" variant="outlined" defaultValue={props.Userrole.email} inputRef={email} />
+                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="อีเมลล์" variant="outlined" defaultValue={props.Userrole.email} inputRef={email} />
             </div>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth  sx={{ minWidth: 120 }} rows={4} label="password" variant="outlined" inputRef={password} />
+                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="รหัสผ่าน" variant="outlined" inputRef={password} />
+            </div>
+            <div style={{ margin: 20 }}>
+                <Select
+                    fullWidth
+                    labelId="แผนก"
+                    id="department"
+                    variant="outlined"
+                    value={valuede} // use the value state to render the selected value
+                    onChange={handleDepartmentChange}
+                >
+                    <MenuItem value={1}>นักศึกษาชั้นปีที่1</MenuItem>
+                    <MenuItem value={2}>นักศึกษาชั้นปีที่2</MenuItem>
+                </Select>
             </div>
             <div style={{ margin: 20 }}>
                 <Button variant="contained" sx={{ mb: 1, float: 'right', verticalAlign: 'bottom' }} onClick={onSubmit}>{props.Userrole.id ? 'Update' : 'Create'}</Button>
