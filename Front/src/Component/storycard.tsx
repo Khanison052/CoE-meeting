@@ -63,7 +63,7 @@ function Storycard(props: Prop) {
         <Typography sx={{ fontSize: 40 }}>{userResult.attributes.Topic}</Typography>
       </Box>
 
-      <Box sx={{ position: 'absolute', left: '31.7%', top: '40%', width: '66.5%', height: '80%', background: '#D9D9D9', flexdirection: 'column' }}>
+      <Box sx={{ position: 'absolute', left: '31.7%', top: '40%', width: '66.5%', height: '80%', background: '#FFCCCC', flexdirection: 'column' }}>
         <div style={{ position: 'relative' }}>
           <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
