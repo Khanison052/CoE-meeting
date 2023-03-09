@@ -26,5 +26,16 @@ export class UserRoleRepository  {
     console.log(resp.data)
     return resp.data
   }
+  async create(userData: any): Promise<Userrole | null> {
+    console.log(userData)
+    const resp = await ax.post(`${this.urlPrefix}/users`, userData,{
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    }); 
+    console.log(resp.data)
+    return resp.data
+  }
+  
   
 }

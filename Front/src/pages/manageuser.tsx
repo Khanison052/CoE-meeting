@@ -3,12 +3,15 @@ import Userrolecard from "../Component/userCard"
 import Userrole from "../model/role"
 import Repo from "../Repo"
 import { useState, useEffect } from 'react'
-import { Box } from "@mui/material"
+import { Box, Button, Dialog, DialogTitle, IconButton } from "@mui/material"
+import { Add, Close } from "@mui/icons-material"
+import Userform from "../Component/userform"
 
 function ManageUser() {
 
     const [UserRole, setUserRole] = useState<Userrole[]>([]);
     const [UserRolelist, setUserRoleList] = useState<Userrole[]>([])
+    const [createFormPopup, setCreateFormPopup] = useState(false);
 
     const fetchUserRole = async () => {
         const result = await Repo.UserRole.getuser()
@@ -31,7 +34,13 @@ function ManageUser() {
             prevUserRoleList.map((item) => (item.id === userRole.id ? userRole : item))
         );
     };
-
+    const onCreate = async (ann: any) => {
+        ann.role = {connect: [{id: 1}]};
+        console.log(ann)
+        await Repo.UserRole.create(ann)
+        fetchUserRolelist()
+        setCreateFormPopup(false)
+    }
 
 
 
@@ -46,8 +55,12 @@ function ManageUser() {
     console.log(UserRolelist)
 
     return (
-        <>  
-            <Box className={"title"}>สมาชิก</Box>
+        <>
+            <Box className={"title"}>สมาชิก
+                <Button sx={{ m: 2, float: 'right' }} variant="contained" onClick={() => setCreateFormPopup(true)}>
+                    <Add /> Announcements
+                </Button>
+            </Box>
             {UserRole.map((UserRole) => (
                 <Form userRole={UserRole}></Form>
             ))}
@@ -59,6 +72,17 @@ function ManageUser() {
                         onUpdateUserRole={onUpdateUserRole}
                     />
                 )))}
+
+
+            <Dialog PaperProps={{ sx: { minWidth: "50%" } }} open={createFormPopup} onClose={() => setCreateFormPopup(false)}>
+                <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    เพิ่มสมาชิก
+                    <IconButton onClick={() => setCreateFormPopup(false)}>
+                        <Close />
+                    </IconButton>
+                </DialogTitle>
+                <Userform Userrole={{}} callbackFn={onCreate}></Userform>
+            </Dialog>
         </>
     )
 }

@@ -23,7 +23,7 @@ function TopicCard(props: Prop) {
         subheader={<>
           Email: {userRole.email}
         <br/>
-          แผนก: {userRole.department.title}
+            แผนก: {userRole.department?.title ? userRole.department.title : '-'}
         </>}
        
       />

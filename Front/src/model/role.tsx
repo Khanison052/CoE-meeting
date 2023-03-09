@@ -4,6 +4,7 @@ export default interface Userrole {
   id: number;
   username: string;
   email: string;
+  password?: string
   role: {
     id: number;
     name: string;
