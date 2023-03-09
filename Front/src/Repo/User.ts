@@ -1,7 +1,6 @@
 import { ax } from '../config';
 import { IRepository } from "./IRepo";
 import UserResult from "../model/meeting";
-import config from "../config";
 import { getToken } from './auth';
 
 export interface UserResultFilter {

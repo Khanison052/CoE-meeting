@@ -2,9 +2,8 @@ import {  Card, CardActionArea, CardContent, CardHeader, Dialog, DialogTitle, Gr
 import { Box } from "@mui/system";
 import { Close } from "@mui/icons-material";
 
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState } from "react";
-
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 import UserResult from "../model/meeting";
 import './card.css'
 
@@ -17,7 +16,6 @@ function TopicCard(props: Prop) {
 
   const userResult = props.userResult
   const navigate = useNavigate();
-  const location = useLocation();
   const [tabIndex, setTabIndex] = useState(0);
   const [popup, setPopup] = useState(false);
   const xlsxHeading = [
@@ -28,7 +26,12 @@ function TopicCard(props: Prop) {
   function story(id: number) {
     navigate(`/story/${id}`)
   }
+<<<<<<< HEAD
   
+=======
+
+
+>>>>>>> 8d251b8148157f7df72e2d751aac68f380e3c917
   const formatTime = (timeString: string) => {
     const timeParts = timeString.split(':');
     const hour = timeParts[0].padStart(2, '0');
@@ -37,7 +40,11 @@ function TopicCard(props: Prop) {
     return `${hour}:${minute}:${second}`;
   };
 
+<<<<<<< HEAD
   return (<Box sx={{ position: 'relative', background: '#990000', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
+=======
+  return (<Box sx={{ position: 'relative', background: '#BEBEBE', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
+>>>>>>> 8d251b8148157f7df72e2d751aac68f380e3c917
     <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#FFCCCC' }}>
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {}, background: '#FFCCCC',fontFamily: 'Sarabun',top:'50%' }}
@@ -48,7 +55,7 @@ function TopicCard(props: Prop) {
       <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', backgroundColor: '#FF6666', borderRadius:'40px',boxShadow:'0px 0px 3.5px' }} onClick={() => setPopup(true)}>
         <CardContent sx={{ height: '30%' }}>
           <Grid container spacing={2} columns={5}>
-            <Grid item xs={5}>
+            <Grid item xs={5} >
               <Typography component="div" sx={{ fontSize: '1.13vw', color: 'white', textAlign: 'center' ,fontFamily: 'Sarabun'}}>
                 {'ผู้ประชุมที่เกี่ยวข้อง'}
               </Typography>

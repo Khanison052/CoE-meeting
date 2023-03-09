@@ -92,9 +92,9 @@
     },
     "users_permissions_users": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "meeting"
+      "mappedBy": "meetings"
     }
   }
 }
