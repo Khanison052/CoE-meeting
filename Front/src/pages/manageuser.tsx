@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { Box, Button, Dialog, DialogTitle, IconButton } from "@mui/material"
 import { Add, Close } from "@mui/icons-material"
 import Userform from "../Component/userform"
+import './manageuser.css'
 
 function ManageUser() {
 
@@ -60,8 +61,8 @@ function ManageUser() {
 
     return (
         <>
-            <Box className={"title"}>สมาชิก
-                <Button sx={{ m: 2, float: 'right' }} variant="contained" onClick={() => setCreateFormPopup(true)}>
+            <Box className={"title"} sx={{ fontFamily: 'Prompt, sans-serif'}}>รายชื่อสมาชิก
+                <Button sx={{ m: 2, float: 'right',fontFamily: 'Prompt, sans-serif' }} variant="contained" onClick={() => setCreateFormPopup(true)}>
                     <Add /> เพิ่มสมาชิก
                 </Button>
             </Box><br />
@@ -79,7 +80,7 @@ function ManageUser() {
 
 
             <Dialog PaperProps={{ sx: { minWidth: "70%" } }} open={createFormPopup} onClose={() => setCreateFormPopup(false)}>
-                <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between',fontFamily: 'Prompt, sans-serif' }}>
                     เพิ่มสมาชิก
                     <IconButton onClick={() => setCreateFormPopup(false)}>
                         <Close />

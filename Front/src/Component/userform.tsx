@@ -2,6 +2,7 @@ import { Button, MenuItem, Select, SelectChangeEvent, TextField, InputLabel } fr
 import { Box } from "@mui/system";
 import { useRef, useState } from "react";
 import Userrole from "../model/role";
+import './userform.css';
 
 interface Prop {
     Userrole: Partial<Userrole>
@@ -66,7 +67,7 @@ function UserroleForm(props: Prop) {
                 </div>
             
 
-            <div style={{ margin: 20 }}>
+            <div style={{ margin: 20, fontFamily: 'Prompt, sans-serif' }}>
                 <InputLabel id="แผนก">Department</InputLabel>
                 <Select
                     fullWidth
@@ -83,7 +84,7 @@ function UserroleForm(props: Prop) {
                 </Select>
             </div>
             <div style={{ margin: 20 }}>
-                <Button variant="contained" sx={{ mb: 1, float: 'right', verticalAlign: 'bottom' }} onClick={onSubmit}>{props.Userrole.id ? 'Update' : 'Create'}</Button>
+                <Button variant="contained" sx={{ mb: 1, float: 'right', verticalAlign: 'bottom',background:'#0000FF'  }} onClick={onSubmit}>{props.Userrole.id ? 'Update' : 'Create'}</Button>
             </div>
         </Box>
     )

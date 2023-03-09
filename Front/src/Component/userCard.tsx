@@ -5,6 +5,7 @@ import { useState } from "react";
 import UserRole from "../model/role";
 import Userform from "./userform";
 import Repo from "../Repo";
+import './userCard.css' ;
 
 
 interface Prop {
