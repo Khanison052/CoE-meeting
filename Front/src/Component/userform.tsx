@@ -16,6 +16,7 @@ function UserroleForm(props: Prop) {
     const password = useRef<HTMLInputElement>(null)
     const [department, setDepartment] = useState<Userrole["department"]>();
     const [valuede, setValuede] = useState<number>(0);
+    console.log(Userrole)
 
     const onSubmit = () => {
         console.log(department)
@@ -24,33 +25,36 @@ function UserroleForm(props: Prop) {
             username: usernameRef.current?.value,
             email: email.current?.value,
             password: password.current?.value,
-            department : department
-        }) 
+            department: department
+        })
     }
     const handleDepartmentChange = (event: SelectChangeEvent<number>) => {
-        if (event.target.value === 1){
+        if (event.target.value === 1) {
             const newDepartment = { id: 1, title: "นักศึกษาชั้นปีที่1" };
             setDepartment(newDepartment);
-            setValuede(1); 
+            setValuede(1);
         }
-        if (event.target.value === 2){
+        if (event.target.value === 2) {
             const newDepartment = { id: 2, title: "นักศึกษาชั้นปีที่2" };
             setDepartment(newDepartment);
-            setValuede(2); 
+            setValuede(2);
         }
-      };
+    };
 
     return (
         <Box>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth sx={{ minWidth: 120 }} label="ชื่อผู้ใช้" variant="outlined" defaultValue={props.Userrole.username} inputRef={usernameRef} />
+                <TextField fullWidth sx={{ minWidth: 120 }} label="Username" variant="outlined" defaultValue={props.Userrole.username} inputRef={usernameRef} />
             </div>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="อีเมลล์" variant="outlined" defaultValue={props.Userrole.email} inputRef={email} />
+                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="E-mail" variant="outlined" defaultValue={props.Userrole.email} inputRef={email} />
             </div>
-            <div style={{ margin: 20 }}>
-                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="รหัสผ่าน" variant="outlined" inputRef={password} />
-            </div>
+            {props.Userrole.id == undefined && (
+                <div style={{ margin: 20 }}>
+                    <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="Password" variant="outlined" inputRef={password} />
+                </div>
+            )}
+
             <div style={{ margin: 20 }}>
                 <Select
                     fullWidth
