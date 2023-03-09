@@ -2,9 +2,8 @@ import {  Card, CardActionArea, CardContent, CardHeader, Dialog, DialogTitle, Gr
 import { Box } from "@mui/system";
 import { Close } from "@mui/icons-material";
 
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState } from "react";
-
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 import UserResult from "../model/meeting";
 import './card.css'
 
@@ -17,7 +16,6 @@ function TopicCard(props: Prop) {
 
   const userResult = props.userResult
   const navigate = useNavigate();
-  const location = useLocation();
   const [tabIndex, setTabIndex] = useState(0);
   const [popup, setPopup] = useState(false);
   const xlsxHeading = [

@@ -1,20 +1,18 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UserResult from "../model/meeting";
 import './storycard.css';
-import axios from 'axios';
-import Repo from "../Repo";
+
 
 interface Prop {
   userResult: UserResult;
   isadmin: boolean;
 }
 function Storycard(props: Prop) {
+
   const isadmin = props.isadmin;
   const userResult = props.userResult;
-  const navigate = useNavigate();
   const [isUploadDialogOpen, setIsUploadDialogOpen] = useState(false);
   console.log(userResult)
   console.log(isadmin)
