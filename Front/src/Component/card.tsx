@@ -1,3 +1,5 @@
+card.tsx
+
 import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, Dialog, DialogTitle, Grid, IconButton, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Close, Delete, Edit, Upload } from "@mui/icons-material";
@@ -7,6 +9,7 @@ import { useEffect, useState } from "react";
 import Repo from '../Repo'
 import UserResult from "../model/User";
 import User from "../model/User";
+import './card.css'
 
 interface Prop {
   userResult: UserResult;
@@ -30,8 +33,8 @@ function TopicCard(props: Prop) {
     navigate(`/story/${id}`)
   }
 
-  return (<Box sx={{ position: 'relative', left: '30%', top: '150%', width: '70%', height: '30%' }} >
-    <Card sx={{ Width: 700, maxheight: 400, margin: 2 }}>
+  return (<Box sx={{ position: 'relative', left: '30%', top: '150%', width: '70%', height: '30%',fontFamily: 'Sarabun' }} >
+    <Card sx={{ Width: 700, maxheight: 400, margin: 2,fontFamily: 'Sarabun' }}>
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {} }}
         title={userResult.attributes.Topic}
@@ -42,7 +45,7 @@ function TopicCard(props: Prop) {
         <CardContent sx={{ height: '30%' }}>
           <Grid container spacing={2} columns={5}>
             <Grid item xs={5}>
-              <Typography component="div" sx={{ fontSize: '1.13vw', color: 'white', textAlign: 'center' }}>
+              <Typography component="div" sx={{ fontSize: '1.13vw', color: 'white', textAlign: 'center' ,fontFamily: 'Sarabun'}}>
                 {'ผู้ประชุมที่เกี่ยวข้อง'}
               </Typography>
             </Grid>
@@ -51,10 +54,10 @@ function TopicCard(props: Prop) {
       </CardActionArea>
 
     </Card>
-    <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%", fontSize: '1vw' } }} open={popup} onClose={() => setPopup(false)}>
+    <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%", fontSize: '1vw',fontFamily: 'Sarabun' } }} open={popup} onClose={() => setPopup(false)}>
       <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Tabs value={tabIndex} onChange={(event: React.SyntheticEvent, newValue: number) => setTabIndex(newValue)} aria-label="basic tabs example">
-          <Tab sx={{ fontSize: '1vw' }} label="ผู้ประชุมที่เกี่ยวข้อง" />
+          <Tab sx={{ fontSize: '1vw' ,fontFamily: 'Sarabun'}} label="ผู้ประชุมที่เกี่ยวข้อง" />
         </Tabs>
         <IconButton onClick={() => setPopup(false)}>
           <Close />
@@ -70,7 +73,7 @@ function TopicCard(props: Prop) {
           <TableBody>
             {Array.isArray(departments) && departments.map((department: any) => (
               <TableRow key={department.id} sx={{ backgroundColor: 'white' }}>
-                <TableCell sx={{ fontSize: '1vw' }}>{department.attributes.title}</TableCell>
+                <TableCell sx={{ fontSize: '1vw' ,fontFamily: 'Sarabun' }}>{department.attributes.title}</TableCell>
               </TableRow>
             ))}
 
