@@ -3,7 +3,7 @@ export default interface userResults {
   attributes: {
     Topic: string;
     location: string;
-    date: string;
+    date: Date ;
     time: string;
     createdAt: string;
     updatedAt: string;

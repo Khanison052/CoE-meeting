@@ -1,12 +1,11 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, Dialog, DialogTitle, Grid, IconButton, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, Typography } from "@mui/material";
+import {  Card, CardActionArea, CardContent, CardHeader, Dialog, DialogTitle, Grid, IconButton, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { Close, Delete, Edit, Upload } from "@mui/icons-material";
-import { read, utils } from 'xlsx';
+import { Close } from "@mui/icons-material";
+
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import Repo from '../Repo'
-import UserResult from "../model/User";
-import User from "../model/User";
+
+import UserResult from "../model/meeting";
 import './card.css'
 
 interface Prop {
@@ -21,7 +20,6 @@ function TopicCard(props: Prop) {
   const location = useLocation();
   const [tabIndex, setTabIndex] = useState(0);
   const [popup, setPopup] = useState(false);
-  const [userResultList, setUserResultList] = useState<User[]>([])
   const xlsxHeading = [
     'แผนก'
   ];
@@ -31,12 +29,25 @@ function TopicCard(props: Prop) {
     navigate(`/story/${id}`)
   }
 
+<<<<<<< HEAD
   return (<Box sx={{ position: 'relative', background: '#990000', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
     <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#FFCCCC' }}>
+=======
+  const formatTime = (timeString: string) => {
+    const timeParts = timeString.split(':');
+    const hour = timeParts[0].padStart(2, '0');
+    const minute = timeParts[1].padStart(2, '0');
+    const second = timeParts[2].split('.')[0].padStart(2, '0');
+    return `${hour}:${minute}:${second}`;
+  };
+
+  return (<Box sx={{ position: 'relative', background: '#BEBEBE', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
+    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#F0FFF0' }}>
+>>>>>>> fe24c2fa0064a5416648fd3a1735613633a40386
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {}, background: '#FFCCCC',fontFamily: 'Sarabun',top:'50%' }}
         title={userResult.attributes.Topic}
-        subheader={`สถานที่ประชุม: ${userResult.attributes.location.toString()} เวลา: ${userResult.attributes.date.toString()}`}
+        subheader={`สถานที่ประชุม: ${userResult.attributes.location.toString()} เวลา: ${userResult.attributes.date.toString()} ${formatTime(userResult.attributes.time)}`}
         onClick={(handleClick)}
       />
       <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', backgroundColor: '#FF6666', borderRadius:'40px',boxShadow:'0px 0px 3.5px' }} onClick={() => setPopup(true)}>

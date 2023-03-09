@@ -1,7 +1,7 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import Form from "../Component/form";
 import Storycard from "../Component/storycard";
-import UserResult from '../model/User';
+import UserResult from '../model/meeting';
 import './main.css';
 import Repo from "../Repo";
 import { useParams } from "react-router-dom";
