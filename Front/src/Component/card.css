@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Sarabun:wght@300&display=swap');
 
 * {
     font-family: sarabun ;
     margin: 0;
     padding: 0;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Sarabun:wght@300&display=swap');
+
+* {
+    font-family: sarabun ;
+    margin: 0;
+    padding: 0;
+>>>>>>> 2ae7e7dd3d8c849a424227632bd27bfe830803dd
 }
