@@ -36,6 +36,16 @@ export class UserRoleRepository  {
     console.log(resp.data)
     return resp.data
   }
+  async update(userData: any): Promise<Userrole | null> {
+    console.log(userData)
+    const resp = await ax.put(`${this.urlPrefix}/users/${userData.id}`, userData,{
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    }); 
+    console.log(resp.data)
+    return resp.data
+  }
   
   
 }
