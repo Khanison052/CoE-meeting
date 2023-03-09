@@ -37,7 +37,7 @@ function TopicCard(props: Prop) {
   };
 
   return (<Box sx={{ position: 'relative', background: '#BEBEBE', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
-    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#F0FFF0' }}>
+    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#FFCCCC' }}>
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {}, background: '#FFCCCC',fontFamily: 'Sarabun',top:'50%' }}
         title={userResult.attributes.Topic}
@@ -47,7 +47,7 @@ function TopicCard(props: Prop) {
       <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', backgroundColor: '#FF6666', borderRadius:'40px',boxShadow:'0px 0px 3.5px' }} onClick={() => setPopup(true)}>
         <CardContent sx={{ height: '30%' }}>
           <Grid container spacing={2} columns={5}>
-            <Grid item xs={5}>
+            <Grid item xs={5} >
               <Typography component="div" sx={{ fontSize: '1.13vw', color: 'white', textAlign: 'center' ,fontFamily: 'Sarabun'}}>
                 {'ผู้ประชุมที่เกี่ยวข้อง'}
               </Typography>
