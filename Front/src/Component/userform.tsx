@@ -43,13 +43,13 @@ function UserroleForm(props: Prop) {
     return (
         <Box>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth sx={{ minWidth: 120 }} label="ชื่อผู้ใช้" variant="outlined" defaultValue={props.Userrole.username} inputRef={usernameRef} />
+                <TextField fullWidth sx={{ minWidth: 120 }} label="Username" variant="outlined" defaultValue={props.Userrole.username} inputRef={usernameRef} />
             </div>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="อีเมลล์" variant="outlined" defaultValue={props.Userrole.email} inputRef={email} />
+                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="E-mail" variant="outlined" defaultValue={props.Userrole.email} inputRef={email} />
             </div>
             <div style={{ margin: 20 }}>
-                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="รหัสผ่าน" variant="outlined" inputRef={password} />
+                <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="Password" variant="outlined" inputRef={password} />
             </div>
             <div style={{ margin: 20 }}>
                 <Select
@@ -59,7 +59,7 @@ function UserroleForm(props: Prop) {
                     variant="outlined"
                     value={valuede} // use the value state to render the selected value
                     onChange={handleDepartmentChange}
-                >
+                >   
                     <MenuItem value={1}>นักศึกษาชั้นปีที่1</MenuItem>
                     <MenuItem value={2}>นักศึกษาชั้นปีที่2</MenuItem>
                 </Select>
