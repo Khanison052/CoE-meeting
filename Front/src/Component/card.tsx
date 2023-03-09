@@ -27,7 +27,6 @@ function TopicCard(props: Prop) {
     navigate(`/story/${id}`)
   }
 
-
   const formatTime = (timeString: string) => {
     const timeParts = timeString.split(':');
     const hour = timeParts[0].padStart(2, '0');

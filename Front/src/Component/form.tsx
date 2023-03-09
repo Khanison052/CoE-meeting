@@ -1,4 +1,6 @@
-
+import { Menu as MenuIcon, AccountCircle, ChevronLeft, Home, Campaign, Today, Logout } from "@mui/icons-material";
+import { useEffect, useState } from "react";
+import { useAppCtx } from "../AppProvider";
 import { Box } from "@mui/system";
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +27,7 @@ function Form(props: Prop) {
 
     return (
         <>
-            <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'flex',flexDirection: 'row', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px' }}>
+            <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'flex',flexDirection: 'row', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px', top: '0%' }}>
                 <img src={require("../images/logoengpsu.png")} className='image' />
                 <Typography sx={{ width: '100%', fontSize: 38, color: 'white', display: 'flex', flexDirection: 'column' ,fontFamily: 'Sarabun'}}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
             </Box>
