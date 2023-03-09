@@ -46,6 +46,13 @@ export class UserRoleRepository  {
     console.log(resp.data)
     return resp.data
   }
+  async delete(id: string|number): Promise<void> {
+    await ax.delete<void>(`${this.urlPrefix}/users/${id}`,{
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    }); 
+  }
   
   
 }

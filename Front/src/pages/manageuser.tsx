@@ -62,7 +62,7 @@ function ManageUser() {
         <>
             <Box className={"title"}>สมาชิก
                 <Button sx={{ m: 2, float: 'right' }} variant="contained" onClick={() => setCreateFormPopup(true)}>
-                    <Add /> Announcements
+                    <Add /> เพิ่มสมาชิก
                 </Button>
             </Box>
             {UserRole.map((UserRole) => (
@@ -73,12 +73,12 @@ function ManageUser() {
                 UserRolelist.username !== 'admin' && (
                     <Userrolecard
                         UserRole={UserRolelist}
-                        onUpdateUserRole={onUpdateUserRole}
+                        onUpdateUserRole={fetchUserRolelist}
                     />
                 )))}
 
 
-            <Dialog PaperProps={{ sx: { minWidth: "50%" } }} open={createFormPopup} onClose={() => setCreateFormPopup(false)}>
+            <Dialog PaperProps={{ sx: { minWidth: "70%" } }} open={createFormPopup} onClose={() => setCreateFormPopup(false)}>
                 <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     เพิ่มสมาชิก
                     <IconButton onClick={() => setCreateFormPopup(false)}>

@@ -49,11 +49,11 @@ function UserroleForm(props: Prop) {
             <div style={{ margin: 20 }}>
                 <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="E-mail" variant="outlined" defaultValue={props.Userrole.email} inputRef={email} />
             </div>
-            {props.Userrole.id == undefined && (
+            
                 <div style={{ margin: 20 }}>
                     <TextField fullWidth sx={{ minWidth: 120 }} rows={4} label="Password" variant="outlined" inputRef={password} />
                 </div>
-            )}
+            
 
             <div style={{ margin: 20 }}>
                 <Select
