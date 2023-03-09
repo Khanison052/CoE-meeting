@@ -35,19 +35,19 @@ function TopicCard(props: Prop) {
     return `${hour}:${minute}:${second}`;
   };
 
-  return (<Box sx={{ position: 'relative', background: '#BEBEBE', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
-    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#FFCCCC' }}>
+  return (<Box sx={{ position: 'relative', background: '#BEBEBE', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Mitr', borderRadius:3, border:0,textAlign: 'left' }} >
+    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#EBEBEB',borderRadius:4 }}>
       <CardHeader
-        sx={{ height: '50%', fontSize: '2rem', style: {}, background: '#FFCCCC',fontFamily: 'Sarabun',top:'50%' }}
+        sx={{ height: '50%', fontSize: '2rem', style: {}, background: '#FFC0A9',fontFamily: 'Sarabun',top:'50%',borderRadius:4 }}
         title={userResult.attributes.Topic}
         subheader={`สถานที่ประชุม: ${userResult.attributes.location.toString()} เวลา: ${userResult.attributes.date.toString()} ${formatTime(userResult.attributes.time)}`}
         onClick={(handleClick)}
       />
-      <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', backgroundColor: '#FF6666', borderRadius:'40px',boxShadow:'0px 0px 3.5px' }} onClick={() => setPopup(true)}>
+      <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', backgroundColor: '#FF8A5E', borderRadius:'40px',boxShadow:'0px 0px 3.5px' }} onClick={() => setPopup(true)}>
         <CardContent sx={{ height: '30%' }}>
           <Grid container spacing={2} columns={5}>
             <Grid item xs={5} >
-              <Typography component="div" sx={{ fontSize: '1.13vw', color: 'white', textAlign: 'center' ,fontFamily: 'Sarabun'}}>
+              <Typography component="div" sx={{ fontSize: '1.2vw', color: 'white', textAlign: 'center' ,fontFamily: 'Mitr'}}>
                 {'ผู้ประชุมที่เกี่ยวข้อง'}
               </Typography>
             </Grid>

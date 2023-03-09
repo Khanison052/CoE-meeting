@@ -5,6 +5,7 @@ import UserResult from "../model/meeting";
 import './storycard.css';
 
 
+
 interface Prop {
   userResult: UserResult;
   isadmin: boolean;
@@ -64,8 +65,8 @@ function Storycard(props: Prop) {
 
       <Box sx={{ position: 'absolute', left: '31.7%', top: '40%', width: '66.5%', height: '80%', background: '#FFCCCC', flexdirection: 'column' }}>
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.45rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ width: '8%', height: '5%',textAlign: 'center',top: -1, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data1 ? (
           Array.isArray(geturl(data1)) ? (
@@ -80,13 +81,13 @@ function Storycard(props: Prop) {
             </a>
           )
         ) : (
-          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Prompt', fontSize: '16px', color:'red' }}>ไม่มีไฟล์ PDF</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.45rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ width: '8%', height: '5%',textAlign: 'center',top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data2 ? (
           Array.isArray(geturl(data2)) ? (
@@ -102,13 +103,13 @@ function Storycard(props: Prop) {
             </a>
           )
         ) : (
-          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Prompt', fontSize: '16px', color:'red' }}>ไม่มีไฟล์ PDF</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.45rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ width: '8%', height: '5%',textAlign: 'center',top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data3 ? (
           Array.isArray(geturl(data3)) ? (
@@ -124,13 +125,13 @@ function Storycard(props: Prop) {
             </a>
           )
         ) : (
-          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Prompt', fontSize: '16px', color:'red' }}>ไม่มีไฟล์ PDF</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.45rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ width: '8%', height: '5%',textAlign: 'center',top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data4 ? (
           Array.isArray(geturl(data4)) ? (
@@ -146,13 +147,13 @@ function Storycard(props: Prop) {
             </a>
           )
         ) : (
-          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Prompt', fontSize: '16px', color:'red' }}>ไม่มีไฟล์ PDF</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.45rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ width: '8%', height: '5%',textAlign: 'center',top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data5 ? (
           Array.isArray(geturl(data5)) ? (
@@ -168,12 +169,12 @@ function Storycard(props: Prop) {
             </a>
           )
         ) : (
-          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Prompt', fontSize: '16px', color:'red' }}>ไม่มีไฟล์ PDF</Typography>
         )}
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.45rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ width: '8%', height: '5%',textAlign: 'center',top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
 
         {data6 ? (
@@ -189,11 +190,11 @@ function Storycard(props: Prop) {
             </a>
           )
         ) : (
-          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Prompt', fontSize: '16px', color:'red' }}>ไม่มีไฟล์ PDF</Typography>
         )}
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
-          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
+          <Typography sx={{ fontSize: '1.45rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
+          {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ width: '8%', height: '5%',textAlign: 'center',top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data7 ? (
           Array.isArray(geturl(data7)) ? (
@@ -209,7 +210,7 @@ function Storycard(props: Prop) {
             </a>
           )
         ) : (
-          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Prompt', fontSize: '16px', color:'red' }}>ไม่มีไฟล์ PDF</Typography>
         )}
 
       </Box>

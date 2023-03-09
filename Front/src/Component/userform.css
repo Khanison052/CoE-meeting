@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Sarabun:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300&family=Noto+Sans+Thai&display=swap');
+
+* {
+    font-family: 'Mitr' ; 
+    margin: 0;
+    padding: 0;
+}
