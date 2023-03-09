@@ -29,10 +29,7 @@ function TopicCard(props: Prop) {
     navigate(`/story/${id}`)
   }
 
-<<<<<<< HEAD
-  return (<Box sx={{ position: 'relative', background: '#990000', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
-    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#FFCCCC' }}>
-=======
+
   const formatTime = (timeString: string) => {
     const timeParts = timeString.split(':');
     const hour = timeParts[0].padStart(2, '0');
@@ -43,7 +40,6 @@ function TopicCard(props: Prop) {
 
   return (<Box sx={{ position: 'relative', background: '#BEBEBE', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Sarabun', borderRadius:3, border:0,textAlign: 'left' }} >
     <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#F0FFF0' }}>
->>>>>>> fe24c2fa0064a5416648fd3a1735613633a40386
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {}, background: '#FFCCCC',fontFamily: 'Sarabun',top:'50%' }}
         title={userResult.attributes.Topic}
