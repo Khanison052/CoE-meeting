@@ -64,7 +64,7 @@ function ManageUser() {
                 <Button sx={{ m: 2, float: 'right' }} variant="contained" onClick={() => setCreateFormPopup(true)}>
                     <Add /> เพิ่มสมาชิก
                 </Button>
-            </Box>
+            </Box><br />
             {UserRole.map((UserRole) => (
                 <Form userRole={UserRole}></Form>
             ))}

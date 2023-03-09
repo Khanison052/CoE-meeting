@@ -1,4 +1,4 @@
-import { Button, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
+import { Button, MenuItem, Select, SelectChangeEvent, TextField, InputLabel } from "@mui/material";
 import { Box } from "@mui/system";
 import { useRef, useState } from "react";
 import Userrole from "../model/role";
@@ -56,6 +56,7 @@ function UserroleForm(props: Prop) {
             
 
             <div style={{ margin: 20 }}>
+                <InputLabel id="แผนก">Department</InputLabel>
                 <Select
                     fullWidth
                     labelId="แผนก"
