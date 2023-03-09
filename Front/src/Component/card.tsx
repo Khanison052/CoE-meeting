@@ -1,5 +1,3 @@
-card.tsx
-
 import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, Dialog, DialogTitle, Grid, IconButton, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Close, Delete, Edit, Upload } from "@mui/icons-material";
