@@ -32,8 +32,9 @@ function Storycard(props: Prop) {
   }
 
   function geturl(data: any) {
-    const url = Array.isArray(data) ? data[0]?.attributes?.url : data?.attributes?.url;
-    return url
+    const urls = Array.isArray(data) ? data.map(item => item?.attributes?.url) : [data?.attributes?.url];
+    console.log(urls)
+    return urls
   }
 
   async function handleFileSelect(event: React.ChangeEvent<HTMLInputElement>) {
@@ -65,79 +66,154 @@ function Storycard(props: Prop) {
 
       <Box sx={{ position: 'absolute', left: '31.7%', top: '40%', width: '66.5%', height: '80%', background: '#D9D9D9', flexdirection: 'column' }}>
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 1 เรื่องที่ประธานแจ้งให้ที่ประชุมทราบ</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data1 ? (
-          <a href={`http://localhost:1337${geturl(data1)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+          Array.isArray(geturl(data1)) ? (
+            geturl(data1).map((url, index) => (
+              <a key={index} href={`http://localhost:1337${url}`} target="_blank" rel="noopener noreferrer">
+                Click to view PDF {index + 1}
+              </a>
+            ))
+          ) : (
+            <a href={`http://localhost:1337${geturl(data1)}`} target="_blank" rel="noopener noreferrer">
+              Click to view PDF
+            </a>
+          )
         ) : (
-          <Typography sx={{fontFamily: 'Sarabun'}}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 2 เรื่องการรับรองการประชุม</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data2 ? (
-          <a href={`http://localhost:1337${geturl(data2)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+          Array.isArray(geturl(data2)) ? (
+            geturl(data2).map((url, index) => (
+              <a key={index} href={`http://localhost:1337${url}`} target="_blank" rel="noopener noreferrer">
+                <span style={{ display: 'block' }}>Click to view PDF {index + 1}</span>
+              </a>
+            ))
+          ) : (
+            <a href={`http://localhost:1337${geturl(data2)}`} target="_blank" rel="noopener noreferrer">
+              <span style={{ display: 'block' }}>Click to view PDF</span>
+
+            </a>
+          )
         ) : (
-          <Typography sx={{fontFamily: 'Sarabun'}}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 3 เรื่องสืบเนื่อง</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data3 ? (
-          <a href={`http://localhost:1337${geturl(data3)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+          Array.isArray(geturl(data3)) ? (
+            geturl(data3).map((url, index) => (
+              <a key={index} href={`http://localhost:1337${url}`} target="_blank" rel="noopener noreferrer">
+                <span style={{ display: 'block' }}>Click to view PDF {index + 1}</span>
+              </a>
+            ))
+          ) : (
+            <a href={`http://localhost:1337${geturl(data3)}`} target="_blank" rel="noopener noreferrer">
+              <span style={{ display: 'block' }}>Click to view PDF</span>
+
+            </a>
+          )
         ) : (
-          <Typography sx={{fontFamily: 'Sarabun'}}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 4 เรื่องที่เสนอให้ที่ประชุมพิจารณา</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data4 ? (
-          <a href={`http://localhost:1337${geturl(data4)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+          Array.isArray(geturl(data4)) ? (
+            geturl(data4).map((url, index) => (
+              <a key={index} href={`http://localhost:1337${url}`} target="_blank" rel="noopener noreferrer">
+                <span style={{ display: 'block' }}>Click to view PDF {index + 1}</span>
+              </a>
+            ))
+          ) : (
+            <a href={`http://localhost:1337${geturl(data4)}`} target="_blank" rel="noopener noreferrer">
+              <span style={{ display: 'block' }}>Click to view PDF</span>
+
+            </a>
+          )
         ) : (
-          <Typography sx={{fontFamily: 'Sarabun'}}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
         )}
 
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 5 เรื่องทักท้วง</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data5 ? (
-          <a href={`http://localhost:1337${geturl(data5)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+          Array.isArray(geturl(data5)) ? (
+            geturl(data5).map((url, index) => (
+              <a key={index} href={`http://localhost:1337${url}`} target="_blank" rel="noopener noreferrer">
+                <span style={{ display: 'block' }}>Click to view PDF {index + 1}</span>
+              </a>
+            ))
+          ) : (
+            <a href={`http://localhost:1337${geturl(data5)}`} target="_blank" rel="noopener noreferrer">
+              <span style={{ display: 'block' }}>Click to view PDF</span>
+
+            </a>
+          )
         ) : (
-          <Typography sx={{fontFamily: 'Sarabun'}}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
         )}
 
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 6 เรื่องแจ้งทราบ</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
 
         {data6 ? (
-          <a href={`http://localhost:1337${geturl(data6)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+          Array.isArray(geturl(data6)) ? (
+            geturl(data6).map((url, index) => (
+              <a key={index} href={`http://localhost:1337${url}`} target="_blank" rel="noopener noreferrer">
+                <span style={{ display: 'block' }}>Click to view PDF {index + 1}</span>
+              </a>
+            ))
+          ) : (
+            <a href={`http://localhost:1337${geturl(data6)}`} target="_blank" rel="noopener noreferrer">
+              <span style={{ display: 'block' }}>Click to view</span>
+            </a>
+          )
         ) : (
-          <Typography sx={{fontFamily: 'Sarabun'}}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
         )}
-
         <div style={{ position: 'relative' }}>
-          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block',fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
+          <Typography sx={{ fontSize: '1.55rem', display: 'inline-block', fontFamily: 'Sarabun' }}>ระเบียบวาระที่ 7 เรื่องอื่นๆ</Typography>
           {isadmin ? <Button variant="contained" color="primary" onClick={handleUpload} style={{ top: -5, left: 10, display: 'inline-block' }}>Upload</Button> : null}
         </div>
         {data7 ? (
-          <a href={`http://localhost:1337${geturl(data7)}`} target="_blank" rel="noopener noreferrer">Click to view PDF</a>
+          Array.isArray(geturl(data7)) ? (
+            geturl(data7).map((url, index) => (
+              <a key={index} href={`http://localhost:1337${url}`} target="_blank" rel="noopener noreferrer">
+                <span style={{ display: 'block' }}>Click to view PDF {index + 1}</span>
+              </a>
+            ))
+          ) : (
+            <a href={`http://localhost:1337${geturl(data7)}`} target="_blank" rel="noopener noreferrer">
+              <span style={{ display: 'block' }}>Click to view PDF</span>
+
+            </a>
+          )
         ) : (
-          <Typography sx={{fontFamily: 'Sarabun'}}>ไม่มีข้อมูล</Typography>
+          <Typography sx={{ fontFamily: 'Sarabun' }}>ไม่มีข้อมูล</Typography>
         )}
+
       </Box>
       <Dialog open={isUploadDialogOpen} onClose={() => setIsUploadDialogOpen(false)}>
         <DialogTitle>Upload a PDF file</DialogTitle>
