@@ -2,7 +2,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography }
 import { Box } from "@mui/system";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import UserResult from "../model/User";
+import UserResult from "../model/meeting";
 import './storycard.css';
 import axios from 'axios';
 import Repo from "../Repo";

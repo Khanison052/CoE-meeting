@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import Form from "../Component/form";
 import TopicCard from "../Component/card"
-import UserResult from '../model/User';
+import UserResult from '../model/meeting';
 import Repo from "../Repo";
 import './main.css';
 import Userrole from "../model/role";
@@ -18,7 +18,7 @@ function Today() {
     const year = today.getFullYear();
     const month = (today.getMonth() + 1).toString().padStart(2, '0');
     const day = today.getDate().toString().padStart(2, '0');
-    const formattedDate = `${year}-${month}-${day}`;
+    const formattedDate = new Date(`${year}-${month}-${day}`);
     const fetchUserResultList = async () => {
         const result = await Repo.UserResults.getAll();
         if (result) {
@@ -64,10 +64,12 @@ function Today() {
             </React.Fragment>
             <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "left" }}>
                 {userResultList.map((userResult, index) => {
+                    const userDate = new Date(userResult.attributes.date); 
+                    console.log(userDate.getTime())
+                    console.log(formattedDate.getTime())
                     const datade = userResult.attributes.departments?.data;
-                    const departTitle = Array.isArray(datade) ? datade[0]?.attributes?.title : datade?.attributes?.title;
-                    console.log(departTitle)
-                    if (departmentTitle === "admin" || (departmentTitle && departTitle.includes(departmentTitle)) && formattedDate === userResult.attributes.date) {
+                    const departTitles = Array.isArray(datade) ? datade.map(department => department.attributes.title) : [datade?.attributes?.title];
+                    if (departmentTitle === "admin" || (departmentTitle && departTitles.includes(departmentTitle)) && formattedDate.getTime() === userDate.getTime()) {
                         return (
                             <Box key={index} sx={{ height: "250px", margin: "1px" }}>
                                 <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />

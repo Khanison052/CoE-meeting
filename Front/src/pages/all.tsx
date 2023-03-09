@@ -3,7 +3,7 @@ import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Form from "../Component/form";
 import TopicCard from "../Component/card"
-import UserResult from '../model/User';
+import UserResult from '../model/meeting';
 import './main.css';
 import Repo from "../Repo";
 import Userrole from "../model/role";
@@ -60,9 +60,8 @@ function All() {
       <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "left" }}>
         {userResultList.map((userResult, index) => {
           const datade = userResult.attributes.departments?.data;
-          const departTitle = Array.isArray(datade) ? datade[0]?.attributes?.title : datade?.attributes?.title;
-          console.log(departTitle)
-          if (departmentTitle === "admin" || (departmentTitle && departTitle.includes(departmentTitle))) {
+          const departTitles = Array.isArray(datade) ? datade.map(department => department.attributes.title) : [datade?.attributes?.title];
+          if (departmentTitle === "admin" || (departmentTitle && departTitles.includes(departmentTitle))) {
             return (
               <Box key={index} sx={{ height: "250px", margin: "1px" }}>
                 <TopicCard userResult={userResult} onUpdateUserResult={onUpdateUserResult} />
