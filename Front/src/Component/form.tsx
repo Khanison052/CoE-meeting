@@ -27,7 +27,7 @@ function Form(props: Prop) {
 
     return (
         <>
-            <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'flex',flexDirection: 'row', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px' }}>
+            <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'flex',flexDirection: 'row', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px', top: '0%' }}>
                 <img src={require("../images/logoengpsu.png")} className='image' />
                 <Typography sx={{ width: '100%', fontSize: 38, color: 'white', display: 'flex', flexDirection: 'column' ,fontFamily: 'Sarabun'}}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
             </Box>
