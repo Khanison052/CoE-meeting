@@ -2,7 +2,7 @@ import axios from 'axios'
 import { AuthProviderProps } from 'react-oidc-context'
 import { User } from 'oidc-client-ts'
 
-const isDev = process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+const isProd = !(!process.env.NODE_ENV || process.env.NODE_ENV === 'development')
 
 export const oidcConfig: AuthProviderProps = {
     authority: 'http://localhost:8888/realms/master',
@@ -32,8 +32,8 @@ ax.interceptors.request.use(
 )
 
 const config = {
-    isDev,
-    remoteRepositoryUrlPrefix: isDev ? 'http://localhost:8000/api' : '/api'
+    isProd,
+    remoteRepositoryUrlPrefix: isProd ? 'https://s08x.coe.psu.ac.th/api' : 'http://localhost:1337/api',
 }
 
 export default config

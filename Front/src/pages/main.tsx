@@ -21,7 +21,7 @@ function Main(){
 
     return (
         <>
-        <Box className={'main'}>ยินดีต้อนรับเข้าสู่ CoE E-meeting</Box>
+        <Box className={'main'} sx={{fontFamily: 'Mitr', fontSize : 40}}>ยินดีต้อนรับเข้าสู่ CoE E-meeting</Box>
         {UserRole.map((UserRole) => (
                 <Form userRole={UserRole}></Form>
             ))}

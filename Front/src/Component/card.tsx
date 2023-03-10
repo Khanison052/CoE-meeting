@@ -43,8 +43,8 @@ function TopicCard(props: Prop) {
         subheader={`สถานที่ประชุม: ${userResult.attributes.location.toString()} เวลา: ${userResult.attributes.date.toString()} ${formatTime(userResult.attributes.time)}`}
         onClick={(handleClick)}
       />
-      <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', backgroundColor: '#FF8A5E', borderRadius:'40px',boxShadow:'0px 0px 3.5px' }} onClick={() => setPopup(true)}>
-        <CardContent sx={{ height: '30%' }}>
+      <CardActionArea sx={{ top:'54%',width: "21%", height: '17%', left: '77.5%', backgroundColor: '#FF8A5E', borderRadius:'40px',boxShadow:'0px 0px 3.5px',fontFamily: 'Mitr' }} onClick={() => setPopup(true)}>
+        <CardContent sx={{ height: '30%',fontFamily: 'Mitr' }}>
           <Grid container spacing={2} columns={5}>
             <Grid item xs={5} >
               <Typography component="div" sx={{ fontSize: '1.2vw', color: 'white', textAlign: 'center' ,fontFamily: 'Mitr'}}>
