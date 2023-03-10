@@ -29,7 +29,7 @@ function Form(props: Prop) {
         <>
             <Box sx={{ position: 'absolute', width: '100%', height: '15%', background: '#721001', display: 'flex',flexDirection: 'row', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '20px', top: '0%' }}>
                 <img src={require("../images/logoengpsu.png")} className='image' />
-                <Typography sx={{ width: '100%', fontSize: 41, color: 'white', display: 'flex', flexDirection: 'column' ,fontFamily: 'Mitr',textAlign:'center'}}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
+                <Typography sx={{ width: '100%', fontSize: 36, color: 'white', display: 'flex', flexDirection: 'column' ,fontFamily: 'Mitr',textAlign:'center'}}>เอกสารการประชุมคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์</Typography>
             </Box>
 
 
@@ -42,13 +42,13 @@ function Form(props: Prop) {
             </Box>
 
             {userRole && (
-                <Box sx={{ position: 'absolute', width: '30%', height: '7%', left: 0, top: '16%', background: 'white', fontSize: 25, border: 'none', textAlign: 'center' }}>
+                <Box sx={{ position: 'absolute', width: '30%', height: '7%', left: 0, top: '16%', background: 'white', fontSize: 25, border: 'none', textAlign: 'center', fontFamily: 'Prompt, sans-serif'  }}>
                     ผู้ใช้ : {userRole.username}
                 </Box>
             )}
 
 
-            <Box sx={{ position: 'absolute', backgroundColor: '#A6A6A6', width: '30%', height: '7%', left: 'none', top: '22%', display: 'flex', flexDirection: 'column', fontSize: 28, borderRight: 1.5 , textAlign: 'center' }}>
+            <Box sx={{ position: 'absolute', backgroundColor: '#A6A6A6', width: '30%', height: '7%', left: 'none', top: '22%', display: 'flex', flexDirection: 'column', fontSize: 28, borderRight: 1.5 , textAlign: 'center', fontFamily: 'Prompt, sans-serif' }}>
                 รายการ
             </Box>
 
