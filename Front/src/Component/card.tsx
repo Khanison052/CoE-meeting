@@ -36,7 +36,7 @@ function TopicCard(props: Prop) {
   };
 
   return (<Box sx={{ position: 'relative', background: '#BEBEBE', left: '31%', top: '120%', width: '68%', height: '65%',fontFamily: 'Mitr', borderRadius:3, border:0,textAlign: 'left' }} >
-    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#EBEBEB',borderRadius:4 }}>
+    <Card sx={{ Width: 700, maxheight: 400, margin: 1,fontFamily: 'Sarabun', background: '#FFC0A9',borderRadius:4 }}>
       <CardHeader
         sx={{ height: '50%', fontSize: '2rem', style: {}, background: '#FFC0A9',fontFamily: 'Sarabun',top:'50%',borderRadius:4 }}
         title={userResult.attributes.Topic}
