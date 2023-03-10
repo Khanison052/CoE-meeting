@@ -1,7 +1,5 @@
 import { ax } from '../config';
-import { IRepository } from "./IRepo";
 import Userrole from "../model/role";
-import config from "../config";
 import { getToken } from './auth';
 
 

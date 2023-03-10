@@ -1,10 +1,11 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, Dialog, DialogTitle, Grid, IconButton, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, Typography } from "@mui/material";
+import { Button, Card, CardActionArea, CardActions, CardHeader, Dialog, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { Close, Delete, Edit, Upload } from "@mui/icons-material";
-import { useEffect, useState } from "react";
+import { Delete, Edit } from "@mui/icons-material";
+import { useState } from "react";
 import UserRole from "../model/role";
 import Userform from "./userform";
 import Repo from "../Repo";
+import './userCard.css' ;
 
 
 interface Prop {
@@ -61,7 +62,7 @@ function TopicCard(props: Prop) {
         <Box>
           <Userform Userrole={userRole} callbackFn={onUpdate}></Userform>
         </Box></Dialog>
-      <Dialog PaperProps={{ sx: { minWidth: "50%", height: "55%" } }} open={deletePopup} onClose={() => setdeletePopup(false)}>
+      <Dialog PaperProps={{ sx: { minWidth: "40%", height: "55%" } }} open={deletePopup} onClose={() => setdeletePopup(false)}>
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <Typography sx={{  fontSize: '2rem' ,paddingTop: 20 }} align="center">Are you sure you want to delete?</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'space-between',paddingTop: '10%' }}>
